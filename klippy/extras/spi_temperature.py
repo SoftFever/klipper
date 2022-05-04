@@ -21,6 +21,7 @@ class SensorBase:
         self._callback = None
         self.min_sample_value = self.max_sample_value = 0
         self._report_clock = 0
+        self.overvolt_undervolt_fault_counter = 0
         self.spi = bus.MCU_SPI_from_config(
             config, spi_mode, pin_option="sensor_pin", default_speed=4000000)
         if config_cmd is not None:
@@ -292,9 +293,16 @@ class MAX31865(SensorBase):
         if fault & 0x08:
             self.fault("Max31865 VRTD- is less than 0.85 * VBIAS, FORCE- open")
         if fault & 0x04:
-            self.fault("Max31865 Overvoltage or undervoltage fault")
+            self.overvolt_undervolt_fault_counter += 1
         if fault & 0x03:
             self.fault("Max31865 Unspecified error")
+
+        if self.overvolt_undervolt_fault_counter > 1:
+            self.fault("Max31865 Overvoltage or undervoltage fault")
+        elif self.overvolt_undervolt_fault_counter > 0:
+            self.overvolt_undervolt_fault_counter = 0
+            self.printer.set_rollover_info("MAX31865","WARNING: Max31865 Overvoltage or undervoltage fault happened once")
+
         adc = adc >> 1 # remove fault bit
         R_div_nominal = adc * self.adc_to_resist_div_nominal
         # Resistance (relative to rtd_nominal_r) is calculated using:
