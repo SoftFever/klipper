@@ -6,7 +6,7 @@
 # This file may be distributed under the terms of the GNU GPLv3 license.
 import math
 from . import bus
-
+from datetime import datetime
 
 ######################################################################
 # SensorBase
@@ -292,16 +292,17 @@ class MAX31865(SensorBase):
             self.fault("Max31865 VREF- is less than 0.85 * VBIAS, FORCE- open")
         if fault & 0x08:
             self.fault("Max31865 VRTD- is less than 0.85 * VBIAS, FORCE- open")
-        if fault & 0x04:
-            self.overvolt_undervolt_fault_counter += 1
         if fault & 0x03:
             self.fault("Max31865 Unspecified error")
 
-        if self.overvolt_undervolt_fault_counter > 1:
-            self.fault("Max31865 Overvoltage or undervoltage fault")
-        elif self.overvolt_undervolt_fault_counter > 0:
+        if fault & 0x04:
+            self.overvolt_undervolt_fault_counter += 1
+            self.printer.set_rollover_info("MAX31865",("%s WARNING: Max31865 Overvoltage or undervoltage fault detected %s times in a row!")%(datetime.now().strftime("%H:%M:%S:%f"),self.overvolt_undervolt_fault_counter))
+            # TODO: make it configurable
+            if self.overvolt_undervolt_fault_counter > 2:
+                self.fault("Max31865 Overvoltage or undervoltage fault")
+        else:
             self.overvolt_undervolt_fault_counter = 0
-            self.printer.set_rollover_info("MAX31865","WARNING: Max31865 Overvoltage or undervoltage fault happened once")
 
         adc = adc >> 1 # remove fault bit
         R_div_nominal = adc * self.adc_to_resist_div_nominal
