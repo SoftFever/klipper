@@ -299,7 +299,7 @@ class MAX31865(SensorBase):
             self.overvolt_undervolt_fault_counter += 1
             self.printer.set_rollover_info("MAX31865",("%s WARNING: Max31865 Overvoltage or undervoltage fault detected %s times in a row!")%(datetime.now().strftime("%H:%M:%S:%f"),self.overvolt_undervolt_fault_counter))
             # TODO: make it configurable
-            if self.overvolt_undervolt_fault_counter > 2:
+            if self.overvolt_undervolt_fault_counter > 4:
                 self.fault("Max31865 Overvoltage or undervoltage fault")
         else:
             self.overvolt_undervolt_fault_counter = 0
