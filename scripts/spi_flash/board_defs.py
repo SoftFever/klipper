@@ -44,6 +44,27 @@ BOARD_DEFS = {
         "firmware_path": "Robin_e3.bin",
         "current_firmware_path": "Robin_e3.cur"
     },
+    'btt-octopus-f407-v1': {
+        'mcu': "stm32f407xx",
+        'spi_bus': "swspi",
+        'spi_pins': "PC8,PD2,PC12",
+        'cs_pin': "PC11",
+        'skip_verify': True
+    },
+    'btt-octopus-f429-v1': {
+        'mcu': "stm32f429xx",
+        'spi_bus': "swspi",
+        'spi_pins': "PC8,PD2,PC12",
+        'cs_pin': "PC11",
+        'skip_verify': True
+    },
+    'btt-octopus-f446-v1': {
+        'mcu': "stm32f446xx",
+        'spi_bus': "swspi",
+        'spi_pins': "PC8,PD2,PC12",
+        'cs_pin': "PC11",
+        'skip_verify': True
+    },
     'btt-skr-pro': {
         'mcu': "stm32f407xx",
         'spi_bus': "swspi",
@@ -66,12 +87,28 @@ BOARD_DEFS = {
         'spi_bus': 'spi3a',
         'cs_pin': 'PA15'
     },
-    'btt-octopus': {
-        'mcu': "stm32f446xx",
+    'btt-skr-3': {
+        'mcu': 'stm32h743xx',
+        'spi_bus': 'spi3a',
+        'cs_pin': 'PA15',
+        'skip_verify': True
+    },
+    'creality-v4.2.2': {
+        'mcu': "stm32f103xe",
         'spi_bus': "swspi",
-        "spi_pins": "PC8,PD2,PC12",
-        "cs_pin": "PC11",
-        "current_firmware_path": "OLD.BIN"
+        'spi_pins': "PC8,PD2,PC12",
+        'cs_pin': "PC11",
+        'skip_verify': True
+    },
+    'monster8': {
+        'mcu': "stm32f407xx",
+        'spi_bus': "spi3a",
+        "cs_pin": "PC9"
+    },
+    'fly-gemini-v2': {
+        'mcu': "stm32f405xx",
+        'spi_bus': "spi1",
+        "cs_pin": "PA4"
     }
 }
 
@@ -99,7 +136,16 @@ BOARD_ALIASES = {
     'btt-skr-mini-mz': BOARD_DEFS['btt-skr-mini'],
     'btt-skr-e3-dip': BOARD_DEFS['btt-skr-mini'],
     'btt002-v1': BOARD_DEFS['btt-skr-mini'],
-    'creality-v4.2.7': BOARD_DEFS['btt-skr-mini'],
+    'creality-v4.2.7': BOARD_DEFS['creality-v4.2.2'],
+    'btt-skr-2': BOARD_DEFS['btt-octopus-f407-v1'],
+    'btt-octopus-f407-v1.0': BOARD_DEFS['btt-octopus-f407-v1'],
+    'btt-octopus-f407-v1.1': BOARD_DEFS['btt-octopus-f407-v1'],
+    'btt-octopus-f429-v1.0': BOARD_DEFS['btt-octopus-f429-v1'],
+    'btt-octopus-f429-v1.1': BOARD_DEFS['btt-octopus-f429-v1'],
+    'btt-octopus-f446-v1.0': BOARD_DEFS['btt-octopus-f446-v1'],
+    'btt-octopus-f446-v1.1': BOARD_DEFS['btt-octopus-f446-v1'],
+    'btt-octopus-pro-f429-v1.0': BOARD_DEFS['btt-octopus-f429-v1'],
+    'btt-octopus-pro-f446-v1.0': BOARD_DEFS['btt-octopus-f446-v1'],
     'btt-skr-pro-v1.1': BOARD_DEFS['btt-skr-pro'],
     'btt-skr-pro-v1.2': BOARD_DEFS['btt-skr-pro'],
     'btt-gtr-v1': BOARD_DEFS['btt-gtr'],
@@ -107,7 +153,7 @@ BOARD_ALIASES = {
     'fysetc-spider-v1': BOARD_DEFS['fysetc-spider'],
     'fysetc-s6-v1.2': BOARD_DEFS['fysetc-spider'],
     'fysetc-s6-v2': BOARD_DEFS['fysetc-spider'],
-    'btt-octopus-pro': BOARD_DEFS['btt-octopus']
+    'robin_v3': BOARD_DEFS['monster8']
 }
 
 def list_boards():
