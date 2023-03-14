@@ -234,7 +234,6 @@ class MessageParser:
         self.messages = []
         self.messages_by_id = {}
         self.messages_by_name = {}
-        self.msgtag_by_format = {}
         self.config = {}
         self.version = self.build_versions = ""
         self.raw_identify_data = ""
@@ -317,11 +316,6 @@ class MessageParser:
             self._error("Command format mismatch: %s vs %s",
                         msgformat, mp.msgformat)
         return mp
-    def lookup_msgtag(self, msgformat):
-        msgtag = self.msgtag_by_format.get(msgformat)
-        if msgtag is None:
-            self._error("Unknown command: %s", msgformat)
-        return msgtag
     def create_command(self, msg):
         parts = msg.strip().split()
         if not parts:
@@ -382,7 +376,6 @@ class MessageParser:
             self.messages.append((msgtag, msgtype, msgformat))
             if msgtag < -32 or msgtag > 95:
                 self._error("Multi-byte msgtag not supported")
-            self.msgtag_by_format[msgformat] = msgtag
             msgid = msgtag & 0x7f
             if msgtype == 'output':
                 self.messages_by_id[msgid] = OutputFormat(msgid, msgformat)

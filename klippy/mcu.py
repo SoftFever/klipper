@@ -80,17 +80,13 @@ class CommandQueryWrapper:
 class CommandWrapper:
     def __init__(self, serial, msgformat, cmd_queue=None):
         self._serial = serial
-        msgparser = serial.get_msgparser()
-        self._cmd = msgparser.lookup_command(msgformat)
+        self._cmd = serial.get_msgparser().lookup_command(msgformat)
         if cmd_queue is None:
             cmd_queue = serial.get_default_command_queue()
         self._cmd_queue = cmd_queue
-        self._msgtag = msgparser.lookup_msgtag(msgformat) & 0xffffffff
     def send(self, data=(), minclock=0, reqclock=0):
         cmd = self._cmd.encode(data)
         self._serial.raw_send(cmd, minclock, reqclock, self._cmd_queue)
-    def get_command_tag(self):
-        return self._msgtag
 
 
 ######################################################################
@@ -152,13 +148,11 @@ class MCU_trsync:
         self._stepper_stop_cmd = mcu.lookup_command(
             "stepper_stop_on_trigger oid=%c trsync_oid=%c", cq=self._cmd_queue)
         # Create trdispatch_mcu object
-        set_timeout_tag = mcu.lookup_command(
-            "trsync_set_timeout oid=%c clock=%u").get_command_tag()
-        trigger_cmd = mcu.lookup_command("trsync_trigger oid=%c reason=%c")
-        trigger_tag = trigger_cmd.get_command_tag()
-        state_cmd = mcu.lookup_command(
+        set_timeout_tag = mcu.lookup_command_tag(
+            "trsync_set_timeout oid=%c clock=%u")
+        trigger_tag = mcu.lookup_command_tag("trsync_trigger oid=%c reason=%c")
+        state_tag = mcu.lookup_command_tag(
             "trsync_state oid=%c can_trigger=%c trigger_reason=%c clock=%u")
-        state_tag = state_cmd.get_command_tag()
         ffi_main, ffi_lib = chelper.get_ffi()
         self._trdispatch_mcu = ffi_main.gc(ffi_lib.trdispatch_mcu_alloc(
             self._trdispatch, mcu._serial.get_serialqueue(), # XXX
@@ -880,6 +874,9 @@ class MCU:
             return self.lookup_command(msgformat)
         except self._serial.get_msgparser().error as e:
             return None
+    def lookup_command_tag(self, msgformat):
+        all_msgs = self._serial.get_msgparser().get_messages()
+        return {fmt: msgtag for msgtag, msgtype, fmt in all_msgs}[msgformat]
     def get_enumerations(self):
         return self._serial.get_msgparser().get_enumerations()
     def get_constants(self):
