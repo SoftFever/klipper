@@ -356,7 +356,6 @@ kick_event(struct serialqueue *sq, double eventtime)
     pollreactor_update_timer(sq->pr, SQPT_COMMAND, PR_NOW);
 }
 
-// OS write of data to be sent to the mcu
 static void
 do_write(struct serialqueue *sq, void *buf, int buflen)
 {
