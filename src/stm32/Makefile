@@ -31,7 +31,8 @@ CFLAGS_klipper.elf += -T $(OUT)src/generic/armcm_link.ld
 $(OUT)klipper.elf: $(OUT)src/generic/armcm_link.ld
 
 # Add source files
-src-y += stm32/watchdog.c stm32/gpio.c stm32/clockline.c generic/crc16_ccitt.c
+src-y += stm32/watchdog.c stm32/gpio.c stm32/clockline.c stm32/dfu_reboot.c
+src-y += generic/crc16_ccitt.c
 src-y += generic/armcm_boot.c generic/armcm_irq.c generic/armcm_reset.c
 src-$(CONFIG_MACH_STM32F0) += ../lib/stm32f0/system_stm32f0xx.c
 src-$(CONFIG_MACH_STM32F0) += generic/timer_irq.c stm32/stm32f0_timer.c
@@ -63,6 +64,8 @@ src-$(CONFIG_MACH_STM32L4) += stm32/stm32h7_adc.c stm32/stm32f0_i2c.c
 spi-src-y := stm32/spi.c
 spi-src-$(CONFIG_MACH_STM32H7) := stm32/stm32h7_spi.c
 src-$(CONFIG_HAVE_GPIO_SPI) += $(spi-src-y)
+sdio-src-y := stm32/sdio.c
+src-$(CONFIG_HAVE_GPIO_SDIO) += $(sdio-src-y)
 usb-src-$(CONFIG_HAVE_STM32_USBFS) := stm32/usbfs.c
 usb-src-$(CONFIG_HAVE_STM32_USBOTG) := stm32/usbotg.c
 src-$(CONFIG_USBSERIAL) += $(usb-src-y) stm32/chipid.c generic/usb_cdc.c
