@@ -180,6 +180,12 @@ def main():
     opts.add_option("-p", "--port", type="string", dest="port",
                     default="/tmp/pseudoserial",
                     help="pseudo-tty device to create for serial port")
+    opts.add_option("-T", "--thermal", type="string", dest="thermal",
+                    action="append", default=[],
+                    help="simulate a heater as heater:sensor:rate:ceiling"
+                    "[:pullup], eg PB4:PA7:50:420:1000 (may be repeated)")
+    opts.add_option("--ambient", type="float", dest="ambient", default=25.,
+                    help="ambient temperature for --thermal zones")
     deffile = os.path.splitext(os.path.basename(sys.argv[0]))[0] + ".vcd"
     opts.add_option("-f", "--tracefile", type="string", dest="tracefile",
                     default=deffile, help="filename to write signal trace to")
@@ -206,6 +212,13 @@ def main():
     if options.pacing_rate:
         pacing = Pacing(options.pacing_rate)
 
+    # Optionally close the heater/thermistor loop. Without this the analog
+    # pins float at 0.55*Vcc and every thermistor reads a constant ~103 C.
+    thermal = None
+    if options.thermal:
+        import avrsim_thermal
+        thermal = avrsim_thermal.attach(dev, options.thermal, options.ambient)
+
     # Setup terminal
     io = TerminalIO()
 
@@ -224,6 +237,9 @@ def main():
     # Display start banner
     msg = "Starting AVR simulation: machine=%s speed=%d\n" % (proc, speed)
     msg += "Serial: port=%s baud=%d\n" % (ptyname, baud)
+    if thermal is not None:
+        msg += "Thermal: ambient=%.1fC zones=%s\n" % (
+            options.ambient, ",".join(options.thermal))
     if options.trace:
         msg += "Trace file: %s\n" % (options.tracefile,)
     sys.stdout.write(msg)
