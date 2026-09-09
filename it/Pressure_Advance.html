@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Installazione
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -612,6 +665,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Fase di fine corsa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Compensazione torsione assi
       </a>
     </li>
   
@@ -1191,8 +1258,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader Entry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        Risoluzione dei problemi CANBUS
       </a>
     </li>
   
@@ -1221,6 +1316,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Sensore di Hall per larghezza del filamento
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1310,7 +1433,7 @@
 <h2 id="regolazione-della-pressure-advance">Regolazione della pressure advance<a class="headerlink" href="#regolazione-della-pressure-advance" title="Permanent link">&para;</a></h2>
 <p>Pressure advance fa due cose utili: riduce le colature durante i movimenti senza estrusione e riduce il blobbing durante le curve. Questa guida utilizza la seconda funzione (riduzione del blobbing durante le curve) come meccanismo per la messa a punto.</p>
 <p>Per calibrare la pressure advance, la stampante deve essere configurata e operativa poiché il test di ottimizzazione prevede la stampa e l'ispezione di un oggetto di prova. È una buona idea leggere questo documento per intero prima di eseguire il test.</p>
-<p>Usa uno slicer per generare il codice G per il grande cubo vuoto che si trova in <a href="prints/square_tower.stl">docs/prints/square_tower.stl</a>. Utilizzare una velocità elevata (ad es. 100 mm/s), riempimento zero e un'altezza dello strato grossolana (l'altezza dello strato dovrebbe essere circa il 75% del diametro dell'ugello). Assicurati che qualsiasi "controllo dinamico dell'accelerazione" sia disabilitato nello slicer.</p>
+<p>Use a slicer to generate g-code for the large hollow square found in <a href="prints/square_tower.stl">docs/prints/square_tower.stl</a>. Use a high speed (eg, 100mm/s), zero infill, and a coarse layer height (the layer height should be around 75% of the nozzle diameter). Make sure any "dynamic acceleration control" and "scarf joint" seams are disabled in the slicer.</p>
 <p>Prepararsi per il test emettendo il seguente comando G-Code:</p>
 <div class="highlight"><pre><span></span><code>SET_VELOCITY_LIMIT SQUARE_CORNER_VELOCITY=1 ACCEL=500
 </code></pre></div>

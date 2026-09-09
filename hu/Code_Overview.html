@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -408,10 +414,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Telepítés
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint a Klipper-hez
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -610,6 +663,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Végállás fázis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Tengely fordulat kompenzáció
       </a>
     </li>
   
@@ -1240,8 +1307,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader belépés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Hibaelhárítás
       </a>
     </li>
   
@@ -1270,6 +1365,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall nyomtatószál szélesség érzékelő
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Örvényáramú induktív szonda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1422,25 +1545,34 @@
 <p>A mikrokontroller funkcióinak nagy része az általános célú bemeneti/kimeneti érintkezőkkel (GPIO) való munkát foglalja magában. Annak érdekében, hogy az alacsony szintű architektúra specifikus kódot elvonatkoztassuk a magas szintű feladatkódtól, minden GPIO eseményt architektúra specifikus burkolatokban valósítunk meg (pl. <strong>src/avr/gpio.c</strong>). A kódot a gcc's "-flto -fwhole-program" optimalizálással fordítottuk, amely kiváló munkát végez a függvények sorolásában a fordítási egységeken keresztül, így a legtöbb ilyen apró GPIO függvény sorolva van a hívóikban, és nincs futásidejű költsége a használatuknak.</p>
 <h2 id="klippy-kod-attekintese">Klippy kód áttekintése<a class="headerlink" href="#klippy-kod-attekintese" title="Permanent link">&para;</a></h2>
 <p>A gazdakódot (Klippy) egy olcsó számítógépen (például egy Raspberry Pi) kell futtatni a mikrokontrollerrel párosítva. A kód elsősorban Pythonban íródott, azonban a CFFI-t használja néhány funkció C kódban történő megvalósításához.</p>
-<p>A kezdeti végrehajtás a <strong>klippy/klippy.py</strong> fájlban kezdődik. Ez beolvassa a parancssori argumentumokat, megnyitja a nyomtató konfigurációs fájlját, példányosítja a fő nyomtatóobjektumokat, és elindítja a soros kapcsolatot. A G-kód parancsok fő végrehajtása a process_commands() metódusban történik a <strong>klippy/gcode.py</strong> fájlban. Ez a kód a G-kód parancsokat nyomtatóobjektum hívásokká fordítja le, amelyek gyakran a műveleteket a mikrovezérlőn végrehajtandó parancsokká alakítják (a mikrovezérlő kódjában a DECL_COMMAND makrón keresztül).</p>
-<p>A Klippy gazdagép kódjában négy szál van. A fő szál kezeli a bejövő G-kód parancsokat. Egy második szál (amely teljes egészében a <strong>klippy/chelper/serialqueue.c</strong> C kódban található) az alacsony szintű IO-t kezeli a soros portal. A harmadik szál a Python kódban (lásd <strong>klippy/serialhdl.py</strong>) a mikrokontroller válaszüzeneteinek feldolgozására szolgál. A negyedik szál hibakeresési üzeneteket ír a naplóba (lásd <strong>klippy/queuelogger.py</strong>), hogy a többi szál soha ne blokkoljon a naplóíráskor.</p>
+<p>Initial execution starts in <strong>klippy/klippy.py</strong>. This reads the command-line arguments, opens the printer config file, instantiates the main printer objects, and starts the serial connection. The main execution of G-code commands is in the _process_commands() method in <strong>klippy/gcode.py</strong>. This code translates the G-code commands into printer object calls, which frequently translate the actions to commands to be executed on the micro-controller (as declared via the DECL_COMMAND macro in the micro-controller code).</p>
+<p>There are several threads in the Klipper host code:</p>
+<ul>
+<li>There is a Python "main thread" that handles incoming G-Code commands and is the starting point for most actions. This thread runs the <a href="https://en.wikipedia.org/wiki/Reactor_pattern">reactor</a> (<strong>klippy/reactor.py</strong>) and most high-level actions originate from IO and timer event callbacks from that reactor.</li>
+<li>A thread for writing messages to the log so that the other threads do not block on log writes. This thread resides in the <strong>klippy/queuelogger.py</strong> code and its multi-threaded nature is not exposed to the main Python thread.</li>
+<li>A thread per micro-controller that performs the low-level reading and writing of messages to that micro-controller. It resides in the <strong>klippy/chelper/serialqueue.c</strong> C code and its multi-threaded nature is not exposed to the Python code.</li>
+<li>A thread per micro-controller for processing messages received from that micro-controller in the Python code. This thread is created in <strong>klippy/serialhdl.py</strong>. Care must be taken in Python callbacks invoked from this thread as this thread may directly interact with the main Python thread.</li>
+<li>A thread per stepper motor that calculates the timing of stepper motor step pulses and compresses those times. This thread resides in the <strong>klippy/chelper/steppersync.c</strong> C code and its multi-threaded nature is not exposed to the Python code.</li>
+</ul>
 <h2 id="mozgasparancs-kodfolyama">Mozgásparancs kódfolyama<a class="headerlink" href="#mozgasparancs-kodfolyama" title="Permanent link">&para;</a></h2>
 <p>Egy tipikus nyomtatómozgás akkor kezdődik, amikor egy "G1" parancsot küldünk a Klippy gazdagépnek, és akkor fejeződik be, amikor a megfelelő lépésimpulzusok megjelennek a mikrokontrolleren. Ez a szakasz egy tipikus mozgatási parancs kódfolyamatát vázolja fel. A <a href="Kinematics.html">kinematika</a> dokumentum további információkat tartalmaz a mozgások mechanikájáról.</p>
 <ul>
 <li>A mozgás parancs feldolgozása a gcode.py fájlban kezdődik. A gcode.py célja a G-kód lefordítása belső hívásokká. Egy G1 parancs a klippy/extras/gcode_move.py állományban lévő cmd_G1() parancsot hívja meg. A gcode_move.py kód kezeli az eredetváltozásokat (pl. G92), a relatív és abszolút pozíciók közötti változásokat (pl. G90) és az egységváltozásokat (pl. F6000=100mm/s). A kód útvonala a mozgatáshoz a következő: <code>_process_data() -&gt; _process_commands() -&gt; cmd_G1()</code>. Végül a ToolHead osztályt hívjuk meg a tényleges kérés végrehajtásához: <code>cmd_G1() -&gt; ToolHead.move()</code></li>
 <li>
-<p>A ToolHead osztály (a toolhead.py állományban) kezeli a "look-ahead" funkciót és követi a nyomtatási műveletek időzítését. A fő kódútvonal egy mozdulathoz a következő: <code>ToolHead.move() -&gt; LookAheadQueue.add_move() -&gt; LookAheadQueue.flush() -&gt; Move.set_junction() -&gt; ToolHead._process_moves()</code>.</p>
+<p>The ToolHead class (in toolhead.py) handles "look-ahead" and tracks the timing of printing actions. The main codepath for a move is: <code>ToolHead.move() -&gt; LookAheadQueue.add_move()</code>, then <code>ToolHead.move() -&gt; ToolHead._process_lookahead() -&gt; LookAheadQueue.flush() -&gt; Move.set_junction()</code>, and then <code>ToolHead._process_lookahead() -&gt; trapq_append()</code>.</p>
 <ul>
 <li>A ToolHead.move() létrehoz egy Move() objektumot a mozgás paramétereivel (cartesian térben, másodperc és milliméter egységekben).</li>
 <li>A kinematikai osztály lehetőséget kap az egyes mozgások ellenőrzésére (<code>ToolHead.move() -&gt; kin.check_move()</code>). A kinematikai osztályok a klippy/kinematics/ könyvtárban találhatók. A check_move() kód hibát adhat ki, ha a mozgás nem érvényes. Ha a check_move() sikeresen befejeződik, akkor az alapul szolgáló kinematikának képesnek kell lennie a mozgás kezelésére.</li>
 <li>A LookAheadQueue.add_move() a move objektumot a "look-ahead" várólistára helyezi.</li>
 <li>A LookAheadQueue.flush() meghatározza az egyes mozgások kezdő és végsebességét.</li>
 <li>A Move.set_junction() a "trapézgenerátort" valósítja meg egy mozgásban. A "trapézgenerátor" minden mozgást három részre bont: egy állandó gyorsulási fázisra, majd egy állandó sebesség fázisra, majd egy állandó lassulási fázisra. Minden mozgás ebben a sorrendben tartalmazza ezt a három fázist, de egyes fázisok időtartama lehet nulla is.</li>
-<li>Amikor a ToolHead._process_moves() meghívásra kerül, a mozgással kapcsolatban minden ismert a kezdőhelye, a véghelye, a gyorsulása, a kezdő/körözési/végsebessége és a gyorsulás/körözési/végsebesség alatt megtett távolság. Minden információ a Move() osztályban tárolódik, és cartesian térben, milliméter és másodperc egységekben van megadva.</li>
-<li>A Klipper egy <a href="https://en.wikipedia.org/wiki/Root-finding_algorithm">iteratív megoldót</a> használ az egyes léptetők lépésidejének létrehozásához. Hatékonysági okokból a léptető impulzusidőket C kódban generálja. A mozgások először egy "trapézmozgás-várólistára" kerülnek: (a klippy/chelper/trapq.c-ben). A lépésidők ezután generálódnak: <code>ToolHead._process_moves() -&gt; ToolHead._advance_move_time() -&gt; ToolHead._advance_flush_time() -&gt; MCU_Stepper.generate_steps() -&gt; itersolve_generate_steps() -&gt; itersolve_gen_steps_range()</code> (in klippy/chelper/itersolve.c). Az iteratív megoldó célja, hogy lépésidőket találjon egy olyan függvényt adva, amely egy időből kiszámítja a léptető pozícióját. Ez úgy történik, hogy különböző időket ismételten "kitalál", amíg a léptető pozíció képlete vissza nem adja a léptető következő lépésének kívánt pozícióját. Az egyes találgatásokból származó visszajelzéseket a jövőbeli találgatások javítására használja, hogy a folyamat gyorsan konvergáljon a kívánt időhöz. A kinematikus léptető pozíció képletek a klippy/chelper/ könyvtárban találhatók (pl. kin_cart.c, kin_corexy.c, kin_delta.c, kin_extruder.c).</li>
-<li>Vedd figyelembe, hogy az extruder saját kinematikai osztályban van kezelve: <code>ToolHead._process_moves() -&gt; PrinterExtruder.move()</code>. Mivel a Move() osztály pontosan megadja a mozgás idejét, és mivel a lépésimpulzusokat meghatározott időzítéssel küldi a mikrokontrollerhez, az extruder osztály által előállított léptetőmozgások szinkronban lesznek a fejmozgással, annak ellenére, hogy a kódot elkülönítve tartjuk.</li>
+<li>When ToolHead._process_lookahead() resumes, everything about the move is known - its start location, its end location, its acceleration, its start/cruising/end velocity, and distance traveled during acceleration/cruising/deceleration. All the information is stored in the Move() class and is in cartesian space in units of millimeters and seconds.</li>
+<li>The moves are then placed on a "trapezoid motion queue" via trapq_append() (in klippy/chelper/trapq.c). The trapq stores all the information in the Move() class in a C struct accessible to the host C code.</li>
+<li>Note that the extruder is handled in its own kinematic class: <code>ToolHead._process_lookahead() -&gt; PrinterExtruder.process_move()</code>. Since the Move() class specifies the exact movement time and since step pulses are sent to the micro-controller with specific timing, stepper movements produced by the extruder class will be in sync with head movement even though the code is kept separate.</li>
+<li>For efficiency reasons, stepper motion is generated in the C code in a thread per stepper motor. The threads are notified when steps should be generated by the motion_queuing module (klippy/extras/motion_queuing.py): <code>PrinterMotionQueuing._flush_handler() -&gt; PrinterMotionQueuing._advance_move_time() -&gt; steppersyncmgr_gen_steps() -&gt; se_start_gen_steps()</code>.</li>
+<li>Klipper uses an <a href="https://en.wikipedia.org/wiki/Root-finding_algorithm">iterative solver</a> to generate the step times for each stepper. The step times are generated from the background thread (klippy/chelper/steppersync.c): <code>se_background_thread() -&gt; se_generate_steps() -&gt; itersolve_generate_steps() -&gt; itersolve_gen_steps_range()</code> (in klippy/chelper/itersolve.c). The goal of the iterative solver is to find step times given a function that calculates a stepper position from a time. This is done by repeatedly "guessing" various times until the stepper position formula returns the desired position of the next step on the stepper. The feedback produced from each guess is used to improve future guesses so that the process rapidly converges to the desired time. The kinematic stepper position formulas are located in the klippy/chelper/ directory (eg, kin_cart.c, kin_corexy.c, kin_delta.c, kin_extruder.c).</li>
 <li>Miután az iteratív megoldó kiszámítja a lépésidőket, azok egy tömbhöz kerülnek hozzáadásra: <code>itersolve_gen_steps_range() -&gt; stepcompress_append()</code> (in klippy/chelper/stepcompress.c). A tömb (struct stepcompress.queue) minden lépéshez tárolja a mikrokontroller megfelelő óraszámláló idejét. Itt a "mikrokontroller óraszámláló" értéke közvetlenül megfelel a mikrokontroller hardveres számlálójának, a mikrokontroller utolsó bekapcsolásának időpontjához viszonyítva.</li>
-<li>A következő fontos lépés a lépések tömörítése: <code>stepcompress_flush() -&gt; compress_bisect_add()</code> (in klippy/chelper/stepcompress.c). Ez a kód generálja és kódolja a mikrokontroller "queue_step" parancsainak sorozatát, amelyek megfelelnek az előző szakaszban felépített léptető lépésidők listájának. Ezek a "queue_step" parancsok ezután sorba kerülnek, prioritást kapnak, és elküldésre kerülnek a mikrokontrollernek (a stepcompress.c:steppersync és a serialqueue.c:serialqueue kódokon keresztül).</li>
+<li>The next major step is to compress the steps: <code>stepcompress_flush() -&gt; compress_bisect_add()</code> (in klippy/chelper/stepcompress.c). This code generates and encodes a series of micro-controller "queue_step" commands that correspond to the list of stepper step times built in the previous stage. These "queue_step" commands are then queued, prioritized, and sent to the micro-controller (via steppersync.c:steppersync and serialqueue.c:serialqueue).</li>
 <li>A queue_step parancsok feldolgozása a mikrokontrollerben az src/command.c állományban kezdődik, amely elemzi a parancsot és meghívja a <code>command_queue_step()</code> parancsot. A command_queue_step() kód (az src/stepper.c-ben) csak az egyes queue_step parancsok paramétereit csatolja egy-egy stepper sorba. Normál működés esetén a queue_step parancsot legalább 100ms-mal az első lépés időpontja előtt elemzi és beállítja a sorba. Végül a léptető események generálása a <code>stepper_event()</code>-ban történik. Ezt a hardveres időzítő megszakításából hívjuk meg az első lépés tervezett időpontjában. A stepper_event() kód generál egy lépésimpulzust, majd átütemezi magát a következő lépésimpulzus idejére a megadott queue_step paraméterekhez. Az egyes queue_step parancsok paraméterei a következők: "interval", "count" és "add". Magas szinten a stepper_event() a következőket hajtja végre, 'count' times: <code>do_step(); next_wake_time = last_wake_time + interval; interval += add;</code></li>
 </ul>
 </li>
@@ -1460,6 +1592,7 @@
 </ul>
 </li>
 <li>Ha hiba van a felhasználó konfigurációjában, mindenképpen hívd fel a figyelmet a <code>load_config()</code> vagy a "connect event" fázisokban. Használd a <code>raise config.error("my error")</code> vagy <code>raise printer.config_error("my error")</code> hibajelzést.</li>
+<li>Do not store a reference to the <code>config</code> object in a class member variable (nor in any similar location that may persist past initial module loading). The <code>config</code> object is a reference to a "config loading phase" class and it is not valid to invoke its methods after the "config loading phase" has completed.</li>
 <li>A "pins" modul segítségével konfigurálhatsz egy tűt a mikrokontrollerben. Ez általában a <code>printer.lookup_object("pins").setup_pin("pwm", config.get("my_pin"))</code>-hoz hasonló módon történik. A visszakapott objektumot ezután futásidőben lehet utasítani.</li>
 <li>Ha a nyomtató objektum definiál egy <code>get_status()</code> metódust, akkor a modul <a href="Status_Reference.html">állapotinformációt</a> exportálhat a <a href="Command_Templates.html">makrókon</a> és az <a href="API_Server.html">API Szerveren</a> keresztül. A <code>get_status()</code> metódusnak egy Python szótárat kell visszaadnia, amelynek kulcsai karakterláncok, értékei pedig egész számok, lebegő számok, karakterláncok, listák, szótárak, True, False vagy None. Használhatók tuplik (és nevesített tuplik) is (ezek az API-kiszolgálón keresztül történő eléréskor listaként jelennek meg). Az exportált "immutable" listákat és szótárakat. Ha tartalmuk megváltozik, akkor egy új objektumot kell visszaküldeni a <code>get_status()</code> parancsból, különben az API-kiszolgáló nem fogja észlelni a változásokat.</li>
 <li>Ha a modulnak hozzáférésre van szüksége a rendszer időzítéséhez vagy külső fájlleírókhoz, akkor a <code>printer.get_reactor()</code> segítségével hozzáférhetünk a globális "event reactor" osztályhoz. Ez a reactor osztály lehetővé teszi az időzítők ütemezését, a fájlleírók bemenetének várakozását, valamint a gazdakód "sleep" használatát.</li>
@@ -1477,7 +1610,7 @@
 <li>Tekintsd át a klippy/kinematics/ könyvtárban található kinematikai osztályokat. A kinematikai osztályok feladata egy cartesian koordinátákban megadott mozgás átalakítása az egyes léptetőkön történő mozgássá. Kiindulópontként le kell tudni másolni az egyik ilyen fájlt.</li>
 <li>Implementáljuk a C léptetőket kinematikai pozíciófüggvényeit minden léptetőhöz, ha azok még nem állnak rendelkezésre (lásd a kin_cart.c, kin_corexy.c és kin_delta.c fájlokat a klippy/chelper/ állományban). A függvénynek meg kell hívnia <code>move_get_coord()</code>, hogy egy adott mozgásidőt (másodpercben) cartesian koordinátává (milliméterben) konvertáljon, majd ebből a cartesian koordinátából kiszámítsa a kívánt léptető pozíciót (milliméterben).</li>
 <li>Az új kinematikai osztályban implementáljuk a <code>calc_position()</code> módszert. Ez a metódus kiszámítja a nyomtatófej pozícióját cartesian koordinátákban az egyes léptetőmotorok pozíciójából. Nem kell, hogy hatékony legyen, mivel jellemzően csak a kezdőpont és az érintési műveletek során hívjuk meg.</li>
-<li>Other methods. Implement the <code>check_move()</code>, <code>get_status()</code>, <code>get_steppers()</code>, <code>home()</code>, <code>clear_homing_state()</code>, and <code>set_position()</code> methods. These functions are typically used to provide kinematic specific checks. However, at the start of development one can use boiler-plate code here.</li>
+<li>Egyéb módszerek. A <code>check_move()</code>, <code>get_status()</code>, <code>get_steppers()</code>, <code>home()</code>, <code>clear_homing_state()</code> és <code>set_position()</code> metódusok végrehajtása. Ezek a függvények jellemzően kinematikai specifikus ellenőrzések biztosítására szolgálnak. A fejlesztés kezdetén azonban használhatunk itt kazánszerű kódot is.</li>
 <li>Tesztelési esetek végrehajtása. Készíts egy G-kód fájlt egy sor olyan mozgással, amelyekkel az adott kinematika fontos eseteit tesztelheted. Kövesd a <a href="Debugging.html">Hibakeresési dokumentációt</a>, hogy ezt a G-kód fájlt mikrokontroller parancsokká alakítsd át. Ez hasznos a sarokesetek gyakorlására és a regressziók ellenőrzésére.</li>
 </ol>
 <h2 id="portolas-uj-mikrokontrollerre">Portolás új mikrokontrollerre<a class="headerlink" href="#portolas-uj-mikrokontrollerre" title="Permanent link">&para;</a></h2>

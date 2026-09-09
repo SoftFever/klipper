@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Telepítés
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint a Klipper-hez
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -669,6 +722,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Tengely fordulat kompenzáció
+      </a>
     </li>
   
 
@@ -1199,8 +1266,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader belépés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Hibaelhárítás
       </a>
     </li>
   
@@ -1229,6 +1324,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall nyomtatószál szélesség érzékelő
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Örvényáramú induktív szonda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1345,7 +1468,7 @@
 <li>A végállásfázis kalibrálása után, ha a végállást később elmozdítják vagy beállítják, akkor a végállást újra kell kalibrálni. Távolítsd el a kalibrálási adatokat a konfigurációs fájlból, és futtasd újra a fenti lépéseket.</li>
 <li>A rendszer használatához a végállásnak elég pontosnak kell lennie ahhoz, hogy a léptető pozícióját két "teljes lépésen" belül azonosítsa. Így például, ha egy léptető 16 mikrolépést használ 0,005 mm-es lépésközzel, akkor a végállásnak legalább 0,160 mm-es pontossággal kell rendelkeznie. Ha a "Endstop stepper_z incorrect phase" típusú hibaüzeneteket kapunk, akkor ez egy nem kellően pontos végállás miatt lehet. Ha az újrakalibrálás nem segít, akkor tiltsd le az endstop fázisbeállítását a konfigurációs fájlból való eltávolítással.</li>
 <li>Ha valaki hagyományos léptető vezérlésű Z tengelyt használ (mint egy cartesian vagy corexy nyomtatón) hagyományos tárgyasztal kiegyenlítő csavarokkal együtt, akkor az is lehetséges, hogy ezt a rendszert úgy használja, hogy minden egyes nyomtatási réteget egy "teljes lépés" határon végezzen el. Ennek a funkciónak az engedélyezéséhez győződj meg arról, hogy a G-kód szeletelő olyan rétegmagassággal van konfigurálva, amely a "teljes lépés" többszöröse, manuálisan engedélyezd az endstop_align_zero opciót az endstop_phase config szakaszban (további részletekért lásd a <a href="Config_Reference.html#endstop_phase">konfigurációs hivatkozást</a>), majd szintezd újra a tárgyasztal csavarjait.</li>
-<li>Ez a rendszer hagyományos (nem Trinamic) léptetőmotor-meghajtókkal is használható. Ehhez azonban gondoskodni kell arról, hogy a léptetőmotor-meghajtók a mikrokontroller minden egyes reset-elésekor újrainduljanak. (Ha a kettő mindig együtt van reset-elve, akkor a Klipper a léptető fázisát úgy tudja meghatározni, hogy nyomon követi a léptetőnek adott parancsok teljes lépésszámát). Jelenleg ez csak akkor lehetséges megbízhatóan, ha mind a mikrokontroller, mind a léptetőmotor-meghajtók kizárólag USB-ről kapnak jelet, és az USB-ről egy Raspberry Pi-n futó hostról kapják a jelet. Ebben a helyzetben meg lehet adni egy MCU konfigurációt a "restart_method: rpi_usb" - ez az opció gondoskodik arról, hogy a mikrokontrollert mindig USB tápellátás-visszaállítással állítsák vissza, ami gondoskodik arról, hogy a mikrokontroller és a léptetőmotor-illesztőprogramok együtt álljanak vissza. Ha ezt a mechanizmust használjuk, akkor manuálisan kell konfigurálni a "trigger_phase" konfigurációs szakaszokat (a részleteket lásd a <a href="Config_Reference.html#endstop_phase">konfigurációs hivatkozást</a>).</li>
+<li>Ez a rendszer hagyományos (nem Trinamic) léptetőmotor-meghajtókkal is használható. Ehhez azonban gondoskodni kell arról, hogy a léptetőmotor-meghajtók a mikrokontroller minden egyes reset-elésekor újrainduljanak. (Ha a kettő mindig együtt van reset-elve, akkor a Klipper a léptető fázisát úgy tudja meghatározni, hogy nyomon követi a léptetőnek adott parancsok teljes lépésszámát). Jelenleg ez csak akkor lehetséges megbízhatóan, ha mind a mikrokontroller, mind a léptetőmotor-meghajtók kizárólag USB-ről kapnak jelet, és az USB-ről egy Raspberry Pi-n futó gazdaszoftverről kapják a jelet. Ebben a helyzetben meg lehet adni egy MCU konfigurációt a "restart_method: rpi_usb" - ez az opció gondoskodik arról, hogy a mikrokontrollert mindig USB tápellátás-visszaállítással állítsák vissza, ami gondoskodik arról, hogy a mikrokontroller és a léptetőmotor-illesztőprogramok együtt álljanak vissza. Ha ezt a mechanizmust használjuk, akkor manuálisan kell konfigurálni a "trigger_phase" konfigurációs szakaszokat (a részleteket lásd a <a href="Config_Reference.html#endstop_phase">konfigurációs hivatkozást</a>).</li>
 </ul>
 
               
@@ -1381,13 +1504,13 @@
       
       
         
-        <a href="Resonance_Compensation.html" class="md-footer__link md-footer__link--next" aria-label="Következő: Rezonancia Kompenzáció" rel="next">
+        <a href="Axis_Twist_Compensation.html" class="md-footer__link md-footer__link--next" aria-label="Következő: Tengely fordulat kompenzáció" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Következő
               </span>
-              Rezonancia Kompenzáció
+              Tengely fordulat kompenzáció
             </div>
           </div>
           <div class="md-footer__button md-icon">

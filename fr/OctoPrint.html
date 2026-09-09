@@ -9,11 +9,11 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
-        <title>OctoPrint for Klipper - Documentation Klipper</title>
+        <title>OctoPrint pour Klipper - Documentation Klipper</title>
       
     
     
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#octoprint-for-klipper" class="md-skip">
+        <a href="#octoprint-pour-klipper" class="md-skip">
           Aller au contenu
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OctoPrint for Klipper
+              OctoPrint pour Klipper
             
           </span>
         </div>
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -381,12 +387,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -407,11 +415,115 @@
               
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OctoPrint pour Klipper
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="OctoPrint.html" class="md-nav__link md-nav__link--active">
+        OctoPrint pour Klipper
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installer-avec-octopi" class="md-nav__link">
+    Installer avec OctoPi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-with-kiauh" class="md-nav__link">
+    Installing with KIAUH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-octoprint-to-use-klipper" class="md-nav__link">
+    Configuring OctoPrint to use Klipper
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -610,6 +722,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Phase de fin de course
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Compensation de torsion de l'axe
       </a>
     </li>
   
@@ -1086,7 +1212,7 @@
   
     <li class="md-nav__item">
       <a href="SDCard_Updates.html" class="md-nav__link">
-        Mises à jour via la carte SD
+        Mises à jour de la SDCard
       </a>
     </li>
   
@@ -1141,8 +1267,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Entrée du bootloader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         BUS CAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        Dépannage du CANBUS
       </a>
     </li>
   
@@ -1171,6 +1325,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Détecteur de largeur de filament à effet hall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Sonde inductive à courants de Foucault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Cellules de charge
       </a>
     </li>
   
@@ -1225,8 +1407,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-with-octopi" class="md-nav__link">
-    Install with OctoPi
+  <a href="#installer-avec-octopi" class="md-nav__link">
+    Installer avec OctoPi
   </a>
   
 </li>
@@ -1262,9 +1444,9 @@
 </a>
 
 
-<h1 id="octoprint-for-klipper">OctoPrint for Klipper<a class="headerlink" href="#octoprint-for-klipper" title="Permanent link">&para;</a></h1>
-<p>Klipper has a few options for its front ends, Octoprint was the first and original front end for Klipper. This document will give a brief overview of installing with this option.</p>
-<h2 id="install-with-octopi">Install with OctoPi<a class="headerlink" href="#install-with-octopi" title="Permanent link">&para;</a></h2>
+<h1 id="octoprint-pour-klipper">OctoPrint pour Klipper<a class="headerlink" href="#octoprint-pour-klipper" title="Permanent link">&para;</a></h1>
+<p>Klipper possède quelques nouvelles options pour ses frontaux, Octoprint était le premier et le frontal original pour Klipper. Ce document donne une brève aperçue de l'installation avec cette option.</p>
+<h2 id="installer-avec-octopi">Installer avec OctoPi<a class="headerlink" href="#installer-avec-octopi" title="Permanent link">&para;</a></h2>
 <p>Start by installing <a href="https://github.com/guysoft/OctoPi">OctoPi</a> on the Raspberry Pi computer. Use OctoPi v0.17.0 or later - see the <a href="https://github.com/guysoft/OctoPi/releases">OctoPi releases</a> for release information.</p>
 <p>One should verify that OctoPi boots and that the OctoPrint web server works. After connecting to the OctoPrint web page, follow the prompt to upgrade OctoPrint if needed.</p>
 <p>After installing OctoPi and upgrading OctoPrint, it will be necessary to ssh into the target machine to run a handful of system commands.</p>
@@ -1309,6 +1491,41 @@ git clone https://github.com/Klipper3d/klipper
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="Installation.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Installation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Installation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Config_Reference.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Référence de configuration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Référence de configuration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

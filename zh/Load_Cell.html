@@ -1,0 +1,1765 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>压力传感器 - Klipper 文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="_klipper3d/css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="." title="Klipper 文档" class="md-header__button md-logo" aria-label="Klipper 文档" data-md-component="logo">
+      
+  <img src="img/klipper.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Klipper 文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              压力传感器
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-Hant/" hreflang="zh-Hant" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/hu/" hreflang="hu" class="md-select__link">
+                    Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/it/" hreflang="it" class="md-select__link">
+                    Italiano
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Klipper3d/klipper/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Klipper3d/klipper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Klipper 文档" class="md-nav__button md-logo" aria-label="Klipper 文档" data-md-component="logo">
+      
+  <img src="img/klipper.svg" alt="logo">
+
+    </a>
+    Klipper 文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Klipper3d/klipper/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Klipper3d/klipper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Overview.html" class="md-nav__link">
+        概述
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Features.html" class="md-nav__link">
+        功能
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ.html" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Releases.html" class="md-nav__link">
+        发行说明
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Config_Changes.html" class="md-nav__link">
+        配置变更
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contact.html" class="md-nav__link">
+        联系方式
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          安装和配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="安装和配置" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          安装和配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation.html" class="md-nav__link">
+        安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          配置参考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置参考" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          配置参考
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Config_Reference.html" class="md-nav__link">
+        配置参考
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Rotation_Distance.html" class="md-nav__link">
+        旋转距离
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Config_checks.html" class="md-nav__link">
+        配置检查
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          打印床调平
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="打印床调平" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          打印床调平
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Bed_Level.html" class="md-nav__link">
+        打印床调平
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Delta_Calibrate.html" class="md-nav__link">
+        三角校正
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Probe_Calibrate.html" class="md-nav__link">
+        探针校准
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="BLTouch.html" class="md-nav__link">
+        BL-Touch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Manual_Level.html" class="md-nav__link">
+        手动调平
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Bed_Mesh.html" class="md-nav__link">
+        床网
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Endstop_Phase.html" class="md-nav__link">
+        限位相位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        轴扭曲补偿
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          共振补偿
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="共振补偿" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          共振补偿
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Resonance_Compensation.html" class="md-nav__link">
+        共振补偿
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Measuring_Resonances.html" class="md-nav__link">
+        共振值测量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Pressure_Advance.html" class="md-nav__link">
+        压力提前
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="G-Codes.html" class="md-nav__link">
+        G-Codes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          命令模板
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="命令模板" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          命令模板
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Command_Templates.html" class="md-nav__link">
+        命令模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Status_Reference.html" class="md-nav__link">
+        状态参考
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="TMC_Drivers.html" class="md-nav__link">
+        TMC 驱动器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Multi_MCU_Homing.html" class="md-nav__link">
+        多微控制器归位与探高
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Slicers.html" class="md-nav__link">
+        切片软件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Skew_Correction.html" class="md-nav__link">
+        偏斜校正
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Exclude_Object.html" class="md-nav__link">
+        排除对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Using_PWM_Tools.html" class="md-nav__link">
+        使用 PWM 工具
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          开发者文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="开发者文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          开发者文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Code_Overview.html" class="md-nav__link">
+        代码总览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Kinematics.html" class="md-nav__link">
+        运动学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Protocol.html" class="md-nav__link">
+        协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="API_Server.html" class="md-nav__link">
+        API 服务器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MCU_Commands.html" class="md-nav__link">
+        MCU命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_protocol.html" class="md-nav__link">
+        CANBUS 协议 (CANBUS protocol)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Debugging.html" class="md-nav__link">
+        调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Benchmarks.html" class="md-nav__link">
+        基准测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CONTRIBUTING.html" class="md-nav__link">
+        为 Klipper 做贡献
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Packaging.html" class="md-nav__link">
+        打包 Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          设备特定文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="设备特定文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          设备特定文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Example_Configs.html" class="md-nav__link">
+        配置示例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SDCard_Updates.html" class="md-nav__link">
+        通过SD卡更新
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RPi_microcontroller.html" class="md-nav__link">
+        RPi 微控制器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Beaglebone.html" class="md-nav__link">
+        Beaglebone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Bootloaders.html" class="md-nav__link">
+        底层引导程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        引导加载程序条目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS.html" class="md-nav__link">
+        CAN 总线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CanBus故障排除
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="TSL1401CL_Filament_Width_Sensor.html" class="md-nav__link">
+        TSL1401CL 耗材宽度传感器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
+        霍尔耗材线径传感器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Eddy 感应涡流探针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          压力传感器
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Load_Cell.html" class="md-nav__link md-nav__link--active">
+        压力传感器
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    相关文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load_cell_diagnostic" class="md-nav__link">
+    使用 LOAD_CELL_DIAGNOSTIC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    校准压力传感器
+  </a>
+  
+    <nav class="md-nav" aria-label="校准压力传感器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    施加一个已知的力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    读取受力数据
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    给压力传感器归零（俗称去皮）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Sponsors.html" class="md-nav__link">
+        赞助
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    相关文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load_cell_diagnostic" class="md-nav__link">
+    使用 LOAD_CELL_DIAGNOSTIC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    校准压力传感器
+  </a>
+  
+    <nav class="md-nav" aria-label="校准压力传感器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    施加一个已知的力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    读取受力数据
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    给压力传感器归零（俗称去皮）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/Klipper3d/klipper/blob/master/docs/Load_Cell.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="_1">压力传感器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>这份文档描述了Klipper对于压力传感器的支持。压力传感器的基础功能包括读取受力数据，并且用于称量耗材等的物品。校准过的压力传感器是压力传感器探针的重要部分。</p>
+<h2 id="_2">相关文档<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Config_Reference.html#load_cell">load_cell 配置参考</a></li>
+<li><a href="G-Codes.html#load_cell">load_cellG-code命令</a></li>
+<li><a href="Status_Reference.html#load_cell">load_cell状态参考</a></li>
+</ul>
+<h2 id="load_cell_diagnostic">使用 <code>LOAD_CELL_DIAGNOSTIC</code><a class="headerlink" href="#load_cell_diagnostic" title="Permanent link">&para;</a></h2>
+<p>当你第一次连接好压力传感器的时候，最好使用<code>LOAD_CELL_DIAGNOSTIC</code>来检测压力传感器的状态。这个工具会收集压力传感器10秒钟内的数据并且报告状态。</p>
+<div class="highlight"><pre><span></span><code>$ LOAD_CELL_DIAGNOSTIC
+// Collecting load cell data for 10 seconds...
+// Samples Collected: 3211
+// Measured samples per second: 332.0
+// Good samples: 3211, Saturated samples: 0, Unique values: 900
+// Sample range: [4.01% to 4.02%]
+// Sample range / sensor capacity: 0.00524%
+</code></pre></div>
+
+<p>你可以检查这些数据：</p>
+<ul>
+<li>配置中的采样率应该接近'Measured samples per second'的值；否则，可能存在配置或接线问题。</li>
+<li>'Saturated samples'的值应该为0。如果样本饱和，这意味着压力传感器检测到了超出量程的力。</li>
+<li>'Unique values'应该等于'Samples Collected'的很大一部分。如果'Unique values'为1，这很有可能是接线问题。</li>
+<li>Tap or push on the sensor while <code>LOAD_CELL_DIAGNOSTIC</code> runs. If things are working correctly this should increase the 'Sample range'.</li>
+</ul>
+<h2 id="_3">校准压力传感器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>压力传感器是通过 <code>LOAD_CELL_CALIBRATE</code>校准的。这是一个交互式的校准工具，有三个步骤：</p>
+<ol>
+<li>首先，使用<code>TARE</code>命令来获得零点受力值。这是稍后应填入配置文件中<code>reference_tare_counts</code>的值。</li>
+<li>然后，向压力传感器施加一个已知大小的力（比如砝码），然后运行<code>CALIBRATE GRAMS=nnn</code>。在这步，将会计算得出<code>counts_per_gram</code>的值。参见<a href="#applying-a-known-force-or-load">the next section</a>以获得更多建议。</li>
+<li>最后，使用 <code>ACCEPT</code>以保存结果。</li>
+</ol>
+<p>你可以在校准中的任何时候使用 <code>ABORT</code>来取消校准流程。</p>
+<h3 id="_4">施加一个已知的力<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>CALIBRATE GRAMS=nnn</code>可以通过多种方式完成。如果你的压力传感器是在一个平台下（如热床或耗材架），最简单的做法是放置一个已知重量的物体，比如若干卷1KG的耗材。</p>
+<p>如果你的压力传感器在工具头上，另一个方法可能更简单：将一个电子秤放在热床上，并缓慢降低工具头（或者升上热床，取决于你的打印机架构）来跟秤接触。你可以需要使用 <code>FORCE_MOVE</code>来实现。但是你也可能需要在电机关闭的情况下手动移动Z轴，直到工具头与电子秤接触。</p>
+<p>一个较好的校准力度应该是接近压力传感器的最大标称值。 比如，如果你有一个5KG的压力传感器，使用一个5KG的负载来校准效果会比较好。这个方法对于床下的传感器更有效，因为有可以支撑重物的结构。对于工具头而言，这个负载数值可能无法在不损坏结构的前提下承受。但是，至少使用1KG的压力，大部分打印机都可以完美承受这个压力。</p>
+<p>校准时，请留意回报的数值：</p>
+<div class="highlight"><pre><span></span><code>$ CALIBRATE GRAMS=555
+// Calibration value: -2.78% (-59803108), Counts/gram: 73039.78739,
+Total capacity: +/- 29.14Kg
+</code></pre></div>
+
+<p><code>Total capacity</code>应该接近压力传感器的标称最大负载。如果这个数值比标称值大很多，可能设置了错误的增益或者传感器过于敏感。对于24位和32位的传感器，这不是一个关键问题，但是对于低位宽的传感器，这个问题会更重要。</p>
+<h2 id="_5">读取受力数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>受力数据可以使用一个G-code命令来读取：</p>
+<div class="highlight"><pre><span></span><code>LOAD_CELL_READ
+// 10.6g (1.94%)
+</code></pre></div>
+
+<p>数据是连续的，所以可以在宏中使用load_cell对象来读取：</p>
+<div class="highlight"><pre><span></span><code>{% set grams = printer.load_cell.force_g %}
+</code></pre></div>
+
+<p>这将提供过去一秒的平均受力数值，与温度传感器的原理类似。</p>
+<h2 id="_6">给压力传感器归零（俗称去皮）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>归零，有时称为去皮，会将当前压力传感器回报的数值设置为0。这在测量相对质量的时候较为有用，比如，在测量耗材质量时，使用 <code>LOAD_CELL_TARE</code>来将重量设置为0。这样，打印时，压力传感器会回报耗材被使用的重量（而不是整卷耗材的重量）。</p>
+<div class="highlight"><pre><span></span><code>LOAD_CELL_TARE
+// Load cell tare value: 5.32% (445903)
+</code></pre></div>
+
+<p>目前的归零值会在打印机状态中回报，并可以在宏中读取。</p>
+<div class="highlight"><pre><span></span><code>{% set tare_counts = printer.load_cell.tare_counts %}
+</code></pre></div>
+
+<h1 id="_7">压力传感器探针<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h2 id="_8">相关文档<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Config_Reference.html#load_cell_probe">load_cell_probe配置参考</a></li>
+<li><a href="G-Codes.html#load_cell_probe">load_cell_probe G-code命令</a></li>
+<li><a href="Status_Reference.html#load_cell_probe">load_cell_probe状态参考</a></li>
+</ul>
+<h2 id="_9">压力传感器探针的安全问题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>因为压力传感器使用喷嘴直接接触，所以当施加的力过于多，会有损坏打印机的风险。压力传感器探测系统有一系列的安全措施，来保证打印机不会由于工具头施加过多的力而损坏。理解这些安全措施很重要，因为大部分安全措施都会被错误的配置值而被规避。</p>
+<h4 id="_10">校准检查<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>每次归位时，load_cell_probe对象都会检查load_cell是否以校准。如果没有，归位将被停止并汇报错误：<code>!! Load Cell not calibrated</code>。</p>
+<h4 id="counts_per_gram"><code>counts_per_gram</code><a class="headerlink" href="#counts_per_gram" title="Permanent link">&para;</a></h4>
+<p>这个设置用于将原始传感器数据转换为克（g）。所有的安全限制数值都是克，对于使用者更方便。如果<code>counts_per_gram</code>设置不准确，可以轻易对工具头施加超过安全值的力。您永远都不应该猜测这个值。使用<code>LOAD_CELL_CALIBRATE</code> 来找到对于您的压力传感器的实际<code>counts_per_gram</code>数值。</p>
+<h4 id="trigger_force"><code>trigger_force</code><a class="headerlink" href="#trigger_force" title="Permanent link">&para;</a></h4>
+<p>这是归位过程中触发限位所需要的力。当归位时，限位会使用当前的读数进行归零操作。<code>trigger_force</code>是从这个归零后的值测量的。当探针与热床接触时，这个值总是会有部分超出，所以请设置相对保守的值，比如，100g的设置可能会导致工具头停止前最高350g的受力。这个“超出值”会随着探测时的<code>speed</code>（速度），较低的ADC采样率，或者<a href="Multi_MCU_Homing.html">多MCU归位</a>而增长。</p>
+<h4 id="reference_tare_counts"><code>reference_tare_counts</code><a class="headerlink" href="#reference_tare_counts" title="Permanent link">&para;</a></h4>
+<p>这是在<code>LOAD_CELL_CALIBRATE</code>时设置的参考归零值。这个数值与<code>force_safety_limit</code>一起工作，用于限制工具头的最大受力。</p>
+<h4 id="force_safety_limit"><code>force_safety_limit（力安全限值）</code><a class="headerlink" href="#force_safety_limit" title="Permanent link">&para;</a></h4>
+<p>这是在探测过程中允许的，相对于<code>reference_tare_counts</code>的最大绝对受力。如果MCU发现这个受力大于这个值，打印机会被停止并报错<code>!! Load cell endstop: too much force!</code>。由多种方式可以出发这个保护措施：</p>
+<p>第一个风险是选择过大的 <code>drift_filter_cutoff_frequency</code>值。这可能会导致偏移过滤器错误的过滤掉一个探针事件并继续归位移动。在这种情况下，<code>force_safety_limit</code>将会作为最后保护措施。</p>
+<p>第二种情况是在一个位置重复探测。Klipper不会在单独的<code>PROBE</code>命令中收回探针。这可能导致探测结束时对工具头的受力。由于外部力在探测过程中可以非常大，<code>load_cell_probe</code>对象会在每次探测时归零受力值。如果您重复<code>PROBE</code>指令，load_cell_probe对象会将限位触发的力归零。多次循环这个过程会导致工具头上不断增加的力。 <code>force_safety_limit</code>会在这种情况不受控制时停止循环。</p>
+<p>Another way this run-away can happen is damage to a strain gauge. If the metal part is permanently bent it will change the <code>reference_tare_counts</code> of the device. This puts the starting tare value much closer to the limit making it more likely to be violated. You want to be notified if this is happening because your hardware has been permanently damaged.</p>
+<p>最后一种触发方式是温度变化。如果你的应变片被加热，它们的<code>reference_tare_counts</code>可能与室温下不同。这种情况下，适度增加<code>force_safety_limit</code>以允许温度变化。</p>
+<h4 id="_11">压力传感器限位的看门狗<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>当归位时，load_cell_endstop对象会在MCU上启动一个看门狗任务以监控传感器的读数。如果传感器在两个连续的采样周期中都没有发送数据，看门狗将会停止打印机并报错<code>!! LoadCell Endstop timed out waiting on ADC data</code>。</p>
+<p>如果这发生了，很有可能ADC有问题。不可靠的打印机接地可能会导致问题。框架，电源外壳，以及打印机热床都应可靠地接地。你可能需要在框架的不同部位接地。阳极氧化的铝型材导电性能不佳，你可能需要打磨一个区域来连接地线以获得良好的电气接触。</p>
+<h4 id="interpolation">Interpolation<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h4>
+<p>To increase the precision of the probing result, the position of the first contact between nozzle and bed can be estimated by fitting a piecewise function to the measured data. The data will consist of two regions: while the nozzle is above the bed, the force will be constant (at the tare value). When the nozzle is in contact with the bed, the force will increase linearly with decreasing z position. A piecewise function is fitted to the data and the optimal z position of the split point is found by minimising the error squared. This enables a resolution finer than the distance between the sampling points and will also be less sensitive to noise.</p>
+<p>Due to both physical and technical reasons, the interpolation uses data collected during an additional ascending movement after the initial descending move. The first 300ms of data collected during the ascending move will be used for the fit (this minimises the influence of tare drifts). The collected data must contain enough samples for the fit: at least 3 samples each below and above the contact point are required.</p>
+<p>It is recommended to use a relatively high trigger force for the probe to have a strong enough signal. If you have too few samples below the contact point, try increasing the <code>trigger_force</code> or reducing the <code>lift_speed</code>. However, if the <code>lift_speed</code> is too small, there will be too few samples above the contact point due to the 300ms window.</p>
+<p>The distance of the ascending move can be configured through the <code>sample_retract_dist</code> parameter.</p>
+<h2 id="_12">压力传感器探针设置流程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>这个部分覆盖了设置一个压力传感器探针的流程。</p>
+<h3 id="_13">首先确认压力传感器<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>一个 <code>[load_cell_probe]</code>同时也是一个<code>[load_cell]</code>，与 <code>[load_cell]</code>有关的G-code命令同时都适用于 <code>[load_cell_probe]</code>。在尝试使用压力传感器探针前，先根据<a href="Load_Cell.html#calibrating-a-load-cell">校准压力传感器</a>章节关于<code>CALIBRATE_LOAD_CELL</code> 的指引校准压力出啊干起，并使用<code>LOAD_CELL_DIAGNOSTIC</code>检查它的状态。</p>
+<h3 id="load_cell_test_tap">使用LOAD_CELL_TEST_TAP验证探针工作<a class="headerlink" href="#load_cell_test_tap" title="Permanent link">&para;</a></h3>
+<p>在实际使用压力传感器用于探测前，使用<code>LOAD_CELL_TEST_TAP</code>指令来测试压力传感器探针的工作。这个命令检测轻触，就像PROBE命令，但是不移动Z轴。默认情况下，它会在测试结束前检测3次轻触。你有30秒的时间来进行每次轻触，如果没有检测到轻触，命令会超时结束。</p>
+<p>如果测试失败，检查你的配置并运行 <code>LOAD_CELL_DIAGNOSTIC</code>来寻找问题。</p>
+<p>压力传感器不支持<code>QUERY_ENDSTOPS</code>或 <code>QUERY_PROBE</code>指令。使用<code>LOAD_CELL_TEST_TAP</code>来在探测前测试功能。</p>
+<h3 id="_14">建议探测温度<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>目前，我们推荐在归位和探测时将喷嘴温度保持在耗材会溢料的温度下。140摄氏度是一个不错的起始点。这个温度同时也不会伤害PEI构件表面。</p>
+<p>溢料导致的喷嘴及热床污染是压力传感器探测错误的头号原因。Klipper目前没有检测低质量结果的通用解决方案。现有的代码会将低质量的探测结果作为有效的探测点。识别这些低质量结果是目前的研究方向。</p>
+<p>目前，由于溢料污染，自动更换探测位置的功能还没有被Klipper支持。类似于<code>quad_gantry_level</code>的模块会反复在同一个坐标探测，即使前一次探测失败。</p>
+<p>由于以上这些原因，极度不推荐在打印温度探测。</p>
+<h3 id="_15">高温喷嘴保护<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>The Voron project has a great macro for protecting your print surface from the hot nozzle. See <a href="https://github.com/VoronDesign/Voron-Tap/blob/main/config/tap_klipper_instructions.md">Voron Tap's
+<code>activate_gcode</code></a></p>
+<p>极度推荐在你的配置中使用类似的东西。</p>
+<h3 id="_16">清理喷嘴<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>在探测前喷嘴应该是干净的。你可以手动清洁，你也可以安装一个喷嘴清洁器，并自动化这个流程。以下是一个推荐的序列：</p>
+<ol>
+<li>等到喷嘴加热到探测温度（比如<code>M109 S140</code>）</li>
+<li>归位机器(<code>G28</code>)</li>
+<li>在一个刷子上刮净喷嘴</li>
+<li>充分加热热床（使热床均热）</li>
+<li>进行探测任务（QGL，床网等）。</li>
+</ol>
+<h3 id="_17">喷嘴热胀冷缩的温度补偿<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>如果在安全温度探测，喷嘴会在到达打印温度时略微膨胀。这将会导致喷嘴距离构件表面更近。可以使用<a href="Config_Reference.html#z_thermal_adjust">[z_thermal_adjust]</a>来补偿。该补偿工具会补偿一系列打印温度，从PLA到PC。</p>
+<h4 id="z_thermal_adjusttemp_coeff">计算 <code>[z_thermal_adjust]</code>的<code>temp_coeff</code><a class="headerlink" href="#z_thermal_adjusttemp_coeff" title="Permanent link">&para;</a></h4>
+<p>最简单的方法是在两个不同的温度测量。理想情况下，这应该涵盖打印温度的下限和上限（比如，180C和290C）。你可以在两个温度分别执行<code>PROBE_ACCURACY</code>并计算 <code>average z</code>的差值。</p>
+<p>调整值即是喷嘴长度除以温度变化。比如。</p>
+<div class="highlight"><pre><span></span><code>temp_coeff = -0.05 / (290 - 180) = -0.00045455
+</code></pre></div>
+
+<p>预期的值应该是负值。正的<code>temp_coeff</code>会在加热时将喷嘴移的更近，而负值会将喷嘴移远。预期的行为是加热时将喷嘴移的更远。</p>
+<h4 id="z_thermal_adjust">配置<code>[z_thermal_adjust]</code><a class="headerlink" href="#z_thermal_adjust" title="Permanent link">&para;</a></h4>
+<p>设置z_thermal_adjust使用 <code>extruder</code>作为温度来源。比如：</p>
+<div class="highlight"><pre><span></span><code>[z_thermal_adjust]
+temp_coeff=-0.00045455
+sensor_type: temperature_combined
+sensor_list: extruder
+combination_method: max
+maximum_deviation: 999
+min_temp: 0
+max_temp: 400
+max_z_adjustment: 0.1
+</code></pre></div>
+
+<h2 id="_18">对工具头压力传感器的连续归零过滤器<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>Klipper在MCU上实现了一个可配置的IIR过滤器来预防在探测时连续的归零。连续归零指的是0值随着外部因素（比如进料管或者温度变化）而变化。这是瞄准工具头传感器和动床结构开发的，这种结构会遭受大量外部因素的影响。</p>
+<h3 id="scipy">安装SciPy<a class="headerlink" href="#scipy" title="Permanent link">&para;</a></h3>
+<p>过滤器的代码使用绝佳的<a href="https://scipy.org/">SciPy</a>库基于配置值来计算过滤器的参数。</p>
+<p>预编译的SciPi构建在32位Raspberry Pi上的Python 3可用。极度推荐32位+Python 3的组合，因为这可以流水线化你的安装流程。可以使用Python 2，但是安装过程将话费30+分钟，并且需要安装额外工具。</p>
+<div class="highlight"><pre><span></span><code>~/klippy-env/bin/pip<span class="w"> </span>install<span class="w"> </span>scipy
+</code></pre></div>
+
+<h3 id="_19">过滤器配置<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>过滤器的参数必须根据打印机正常工作时的偏移来决定。脚本中提供Jupyter Notebook，<a href="https://github.com/Klipper3d/klipper/blob/master/scripts/filter_workbench.ipynb">filter_workbench.ipynb</a>，用于提供详细的调查数据，基于真实数据和FFT。</p>
+<h3 id="_20">过滤建议<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>对于那些只想要一个能用的过滤器的人，建议：</p>
+<ul>
+<li>真正必须的选项是<code>drift_filter_cutoff_frequency</code>。一个保守的起始值是 <code>0.5</code>Hz。Prusa MK4在发货时使用<code>0.8</code>hz，Prusa XL发货时使用<code>11.2</code>hz。这可能是一个安全的实验范围。将这个值设置的过高会导致延迟触发，进而导致工具头受力过大。</li>
+<li>将<code>trigger_fouce</code>保持在低位。过滤器的内部计数器将触发值接近0，所以较大的触发力度是不必须的。</li>
+<li>将 <code>force_safety_limit</code>保持在保守的值。默认是2KG，应该可以保证工具头在实验时安全。如果你触发了这个限制，则<code>drift_filter_cutoff_frequency</code>可能过高。</li>
+</ul>
+<h2 id="_21">对于压力传感器工具头板的建议<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>该部分讲述关于想要在工具头板上使用[load_cell_probe]的建议</p>
+<h3 id="adc">ADC传感器选择&amp;工具头板开发建议<a class="headerlink" href="#adc" title="Permanent link">&para;</a></h3>
+<p>理想情况下，一个传感器应该满足以下要求：</p>
+<ul>
+<li>至少24位带宽</li>
+<li>使用SPI通信</li>
+<li>有一根可以不通过SPI通信就可以确认准备就绪的引脚。这根引脚经常被称为"Data Ready"或者"DRDY"引脚。检查一根引脚比发送一次SPI闻询快得多。</li>
+<li>有一个可编程的128级增益放大器。这样就无需单独的放大器了。</li>
+<li>通过SPI来指示传感器是否重置。检测重置可以避免归位时的错误，并且在一开始就避免嘈杂的数据。这也可以帮助用户检测接地和接线问题。</li>
+<li>一个可以在350Hz和2Khz之间选择的采样率。太高的采样率对于3D打印机并没有好处，因为打印头在高速移动的时候就能产生很多噪音。250hz以下的采样率需要更低的探测速率。这也会增加打印头的受力，因为在低采样率时触发延迟较高。比如，一个100Hz的压力传感器在1mm/s探测的时候，安全余量和一个500Hz在5mm/s探测的时候一样。</li>
+<li>如果准备将压力传感器安装在床下，并且期望使用多个压力传感器，则应使用一款可以同时采样所有传感器的芯片。“多通道切换式”的多ADC实现方式需要一点时间来稳定读数，所以这类芯片在多传感器布置下不适用于探测用途。</li>
+</ul>
+<p>在Klipper的 <code>bulk_sensor</code> 和 <code>load_cell_endstop</code>架构下，引入新传感器芯片的支持不是特别难。</p>
+<h3 id="5v">5V电源滤波<a class="headerlink" href="#5v" title="Permanent link">&para;</a></h3>
+<p>强烈建议在ADC芯片上使用比制造商建议规格更大的电容。ADC芯片是为了低电气噪音环境设计的（比如电池供电）。传感器的制造商推荐的规格一般假定了一个纯净的电源环境。将他们推荐的电容规格视为下限。</p>
+<p>3D打印机会在5V电源总线上产生大量电气噪音，这会严重影响传感器的精度。在一块由标准3D打印机电源供电的主板上测试压力传感器，保持步进电机激活，以模拟真实环境。测试之后再决定需要的滤波电容大小。</p>
+<h3 id="_22">接地与接地层<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>模拟ADC芯片的部分组件对于电气噪音和静电极度敏感。放置在第一版层的较大接地层可以缓解噪声问题。将芯片安装在远离电源以及DCDC转换器的地方。电路板应有恰当的接地返回主DC电源。</p>
+<h3 id="hx711hx717">对于HX711和HX717的额外提示<a class="headerlink" href="#hx711hx717" title="Permanent link">&para;</a></h3>
+<p>这些传感器因为低成本及其良好的供应链可得性而受欢迎。然而，这款传感器拥有一些缺点：</p>
+<ul>
+<li>HX71x传感器系列使用bit-bang通信，这会造成较高的MCU负载开销。使用SPI通信的传感器可以节省工具板CPU的运算资源。</li>
+<li>HX71x系列传感器没有与MCU通信重置事件的能力。Klipper 采用一种时序启发式方法来检测复位，但这并非理想方案。重置通常意味着线路连接或接地存在问题。</li>
+<li>对于探测，强烈推荐HX717，由于它的采样率更高（320 vs HX711仅有80）。在使用HX711进行探测时，探测速度应限制为2mm/s。</li>
+<li>HX71x系列的采样率无法使用Klipper配置来设置。如果你有一个每秒10采样的传感器（极其常见），它需要更改物理配置（如配置电阻）才能以每秒80采样运行。</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="Eddy_Probe.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Eddy 感应涡流探针" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Eddy 感应涡流探针
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Sponsors.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 赞助" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              赞助
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+    
+  </body>
+</html>

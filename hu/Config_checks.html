@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Telepítés
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint a Klipper-hez
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -709,6 +762,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Végállás fázis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Tengely fordulat kompenzáció
       </a>
     </li>
   
@@ -1240,8 +1307,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader belépés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Hibaelhárítás
       </a>
     </li>
   
@@ -1270,6 +1365,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall nyomtatószál szélesség érzékelő
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Örvényáramú induktív szonda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1417,7 +1540,7 @@
 <p>Ellenőrizd, hogy a nyomtató minden tengelye manuálisan szabadon mozog-e (a léptetőmotorok ki vannak kapcsolva). Ha nem, adj ki egy M84 parancsot a motorok letiltására. Ha valamelyik tengely még mindig nem tud szabadon mozogni, akkor ellenőrizd a léptetőmotor "enable_pin" konfigurációját az adott tengelyhez. A legtöbb hagyományos léptetőmotor-meghajtónál a motor engedélyező pin "aktív alacsony", ezért az engedélyező pin előtt egy "!"-nek kell lennie (például "enable_pin: !PA1").</p>
 <h2 id="vegallasok-ellenorzese">Végállások ellenőrzése<a class="headerlink" href="#vegallasok-ellenorzese" title="Permanent link">&para;</a></h2>
 <p>Kézzel mozgasd az összes nyomtatótengelyt úgy, hogy egyikük se érintkezzen végállással. Küldj QUERY_ENDSTOPS parancsot a parancskonzolon keresztül. Válaszul meg kell kapnod az összes konfigurált végállás aktuális állapotát, és mindegyiknek "nyitott" állapotot kell jeleznie. Minden egyes végállás esetében futtasd újra a QUERY_ENDSTOPS parancsot, miközben kézzel kezdeményezed a végállást. A QUERY_ENDSTOPS parancsnak a végállást "TRIGGERED"-ként kell jeleznie.</p>
-<p>Ha a végállás invertáltnak tűnik ("nyitott" jelzést ad, amikor kivált, és fordítva), akkor adjunk hozzá egy "!"-t a pin-definícióhoz (például "endstop_pin: ^PA2"), vagy távolítsuk el a "!"-t, ha már van benne egy.</p>
+<p>If the endstop appears inverted (it reports "open" when triggered and vice-versa) then add a "!" to the pin definition (for example, "endstop_pin: ^!PA2"), or remove the "!" if there is already one present.</p>
 <p>Ha a végállás egyáltalán nem változik, akkor ez általában azt jelzi, hogy a végállás egy másik tűhöz van csatlakoztatva. Azonban az is előfordulhat, hogy a tű "pullup" beállításának megváltoztatására van szükség (a '^' az endstop_pin név elején, a legtöbb nyomtató "pullup" ellenállást használ, és a '^' -nek jelen kell lennie).</p>
 <h2 id="leptetomotorok-ellenorzese">Léptetőmotorok ellenőrzése<a class="headerlink" href="#leptetomotorok-ellenorzese" title="Permanent link">&para;</a></h2>
 <p>A STEPPER_BUZZ parancs segítségével ellenőrizd az egyes léptetőmotorok csatlakoztathatóságát. Kezd az adott tengely kézi pozicionálásával egy középső pontra, majd futtasd a <code>STEPPER_BUZZ STEPPER=stepper_x</code> parancsot a parancskonzolon. A STEPPER_BUZZ parancs hatására az adott léptető egy millimétert mozog pozitív irányba, majd visszatér a kiindulási helyzetébe. (Ha a végállást a position_endstop=0 értéken definiáljuk, akkor minden egyes mozgás kezdetén a léptető a végállástól távolodik). Ezt az oszcillációt tízszer fogja végrehajtani.</p>

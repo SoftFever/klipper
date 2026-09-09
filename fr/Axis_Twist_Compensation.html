@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -381,12 +387,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -408,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint pour Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -496,12 +551,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
       
       
       
@@ -611,6 +668,88 @@
       <a href="Endstop_Phase.html" class="md-nav__link">
         Phase de fin de course
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Compensation de torsion de l'axe
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link md-nav__link--active">
+        Compensation de torsion de l'axe
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-compensation-usage" class="md-nav__link">
+    Overview of compensation usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of compensation usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage-x-axis-calibration" class="md-nav__link">
+    Basic Usage: X-Axis Calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-y-axis-calibration" class="md-nav__link">
+    For Y-Axis Calibration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axis_twist_compensation-setup-and-commands" class="md-nav__link">
+    [axis_twist_compensation] setup and commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1086,7 +1225,7 @@
   
     <li class="md-nav__item">
       <a href="SDCard_Updates.html" class="md-nav__link">
-        Mises à jour via la carte SD
+        Mises à jour de la SDCard
       </a>
     </li>
   
@@ -1141,8 +1280,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Entrée du bootloader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         BUS CAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        Dépannage du CANBUS
       </a>
     </li>
   
@@ -1171,6 +1338,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Détecteur de largeur de filament à effet hall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Sonde inductive à courants de Foucault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Cellules de charge
       </a>
     </li>
   
@@ -1246,13 +1441,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#automatic-calibration-for-both-axes" class="md-nav__link">
-    Automatic Calibration for Both Axes
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1283,10 +1471,10 @@
 
 
 <h1 id="compensation-de-torsion-de-laxe">Compensation de torsion de l'axe<a class="headerlink" href="#compensation-de-torsion-de-laxe" title="Permanent link">&para;</a></h1>
-<p>Ce document décrit le module [axis_twist_compensation].</p>
+<p>This document describes the <code>[axis_twist_compensation]</code> module.</p>
 <p>Some printers may have a small twist in their X rail which can skew the results of a probe attached to the X carriage. This is common in printers with designs like the Prusa MK3, Sovol SV06 etc and is further described under <a href="Probe_Calibrate.html#location-bias-check">probe location
 bias</a>. It may result in probe operations such as <a href="Bed_Mesh.html">Bed Mesh</a>, <a href="G-Codes.html#screws_tilt_adjust">Screws Tilt Adjust</a>, <a href="G-Codes.html#z_tilt_adjust">Z Tilt Adjust</a> etc returning inaccurate representations of the bed.</p>
-<p>This module uses manual measurements by the user to correct the probe's results. Note that if your axis is significantly twisted it is strongly recommended to first use mechanical means to fix it prior to applying software corrections.</p>
+<p>Ce module utilise des mesures manuelles effectuées par l'utilisateur afin de corriger les résultats de la sonde. Notez que si votre axe est significativement tordu il est fortement recommandé d'utiliser en premier lieu des moyens mécaniques pour le corriger avant d'utiliser des solutions logicielles.</p>
 <p><strong>Warning</strong>: This module is not compatible with dockable probes yet and will try to probe the bed without attaching the probe if you use it.</p>
 <h2 id="overview-of-compensation-usage">Overview of compensation usage<a class="headerlink" href="#overview-of-compensation-usage" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -1299,42 +1487,38 @@ bias</a>. It may result in probe operations such as <a href="Bed_Mesh.html">Bed 
 <div class="highlight"><pre><span></span><code>AXIS_TWIST_COMPENSATION_CALIBRATE
 </code></pre></div>
 
-<p>This command will calibrate the X-axis by default. - The calibration wizard will prompt you to measure the probe Z offset at several points along the bed. - By default, the calibration uses 3 points, but you can specify a different number with the option: <code>SAMPLE_COUNT=&lt;value&gt;</code></p>
+<p>This command will calibrate the X-axis by default.</p>
+<ul>
+<li>The calibration wizard will prompt you to measure the probe Z offset at several points along the bed.</li>
+<li>By default, the calibration uses 3 points, but you can specify a different number with the option: <code>SAMPLE_COUNT=&lt;value&gt;</code></li>
+</ul>
 <ol>
-<li><strong>Adjust Your Z Offset:</strong> After completing the calibration, be sure to [adjust your Z offset] (Probe_Calibrate.md#calibrating-probe-z-offset).</li>
-<li>
-<p><strong>Perform Bed Leveling Operations:</strong> Use probe-based operations as needed, such as:</p>
+<li><strong>Adjust Your Z Offset:</strong> After completing the calibration, be sure to <a href="Probe_Calibrate.html#calibrating-probe-z-offset">adjust your Z offset</a>.</li>
+<li><strong>Perform Bed Leveling Operations:</strong> Use probe-based operations as needed, such as:</li>
+</ol>
 <ul>
 <li><a href="G-Codes.html#screws_tilt_adjust">Screws Tilt Adjust</a></li>
 <li><a href="G-Codes.html#z_tilt_adjust">Z Tilt Adjust</a></li>
 </ul>
-</li>
-<li>
-<p><strong>Finalize the Setup:</strong></p>
+<ol>
+<li><strong>Finalize the Setup:</strong></li>
+</ol>
 <ul>
 <li>Home all axes, and perform a <a href="Bed_Mesh.html">Bed Mesh</a> if necessary.</li>
 <li>Run a test print, followed by any <a href="Axis_Twist_Compensation.html#fine-tuning">fine-tuning</a> if needed.</li>
 </ul>
-</li>
-</ol>
 <h3 id="for-y-axis-calibration">For Y-Axis Calibration<a class="headerlink" href="#for-y-axis-calibration" title="Permanent link">&para;</a></h3>
 <p>The calibration process for the Y-axis is similar to the X-axis. To calibrate the Y-axis, use:</p>
 <div class="highlight"><pre><span></span><code>AXIS_TWIST_COMPENSATION_CALIBRATE AXIS=Y
 </code></pre></div>
 
 <p>This will guide you through the same measuring process as for the X-axis.</p>
-<h3 id="automatic-calibration-for-both-axes">Automatic Calibration for Both Axes<a class="headerlink" href="#automatic-calibration-for-both-axes" title="Permanent link">&para;</a></h3>
-<p>To perform automatic calibration for both the X and Y axes without manual intervention, use:</p>
-<div class="highlight"><pre><span></span><code>AXIS_TWIST_COMPENSATION_CALIBRATE AUTO=True
-</code></pre></div>
-
-<p>In this mode, the calibration process will run for both axes automatically.</p>
 <blockquote>
 <p><strong>Conseil :</strong> La température du plateau ainsi que la température et la taille de la buse ne semblent pas avoir d'influence sur le processus de calibration.</p>
 </blockquote>
 <h2 id="axis_twist_compensation-setup-and-commands">[axis_twist_compensation] setup and commands<a class="headerlink" href="#axis_twist_compensation-setup-and-commands" title="Permanent link">&para;</a></h2>
-<p>Configuration options for [axis_twist_compensation] can be found in the <a href="Config_Reference.html#axis_twist_compensation">Configuration Reference</a>.</p>
-<p>Commands for [axis_twist_compensation] can be found in the <a href="G-Codes.html#axis_twist_compensation">G-Codes Reference</a></p>
+<p>Configuration options for <code>[axis_twist_compensation]</code> can be found in the <a href="Config_Reference.html#axis_twist_compensation">Configuration Reference</a>.</p>
+<p>Commands for <code>[axis_twist_compensation]</code> can be found in the <a href="G-Codes.html#axis_twist_compensation">G-Codes Reference</a></p>
 
               
             </article>
@@ -1349,6 +1533,41 @@ bias</a>. It may result in probe operations such as <a href="Bed_Mesh.html">Bed 
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="Endstop_Phase.html" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Phase de fin de course" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Phase de fin de course
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Resonance_Compensation.html" class="md-footer__link md-footer__link--next" aria-label="Suivant: Compensation de la résonance" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Compensation de la résonance
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

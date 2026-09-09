@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -408,10 +414,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Installazione
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -610,6 +663,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Fase di fine corsa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Compensazione torsione assi
       </a>
     </li>
   
@@ -1239,8 +1306,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader Entry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        Risoluzione dei problemi CANBUS
       </a>
     </li>
   
@@ -1269,6 +1364,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Sensore di Hall per larghezza del filamento
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1441,7 +1564,7 @@ make
 <h2 id="analisi-del-movimento-e-registrazione-dei-dati">Analisi del movimento e registrazione dei dati<a class="headerlink" href="#analisi-del-movimento-e-registrazione-dei-dati" title="Permanent link">&para;</a></h2>
 <p>Klipper supporta la registrazione della cronologia dei movimenti interni, che può essere analizzata in seguito. Per utilizzare questa funzione, Klipper deve essere avviato con <a href="API_Server.html">Server API</a> abilitato.</p>
 <p>La registrazione dei dati è abilitata con lo strumento <code>data_logger.py</code>. Per esempio:</p>
-<div class="highlight"><pre><span></span><code>~/klipper/scripts/motan/data_logger.py /tmp/klippy_uds mylog
+<div class="highlight"><pre><span></span><code>~/klipper/scripts/motan/data_logger.py /tmp/klippy_uds mylog -s &#39;*&#39;
 </code></pre></div>
 
 <p>Questo comando si collegherà al Klipper API Server, sottoscriverà le informazioni sullo stato e sul movimento e registrerà i risultati. Vengono generati due file: un file di dati compresso e un file di indice (ad esempio, <code>mylog.json.gz</code> e <code>mylog.index.gz</code>). Dopo aver avviato la registrazione, è possibile completare le stampe e altre azioni: la registrazione continuerà in background. Al termine della registrazione, premi <code>ctrl-c</code> per uscire dallo strumento <code>data_logger.py</code>.</p>

@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -408,10 +414,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         安裝
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -610,6 +663,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         限位相位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Axis Twist Compensation
       </a>
     </li>
   
@@ -1356,8 +1423,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader Entry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CAN 匯流排
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Troubleshooting
       </a>
     </li>
   
@@ -1386,6 +1481,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         霍爾耗材線徑感測器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        渦電流電感式探針
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1728,7 +1851,7 @@ bossac -U -p /dev/ttyACM0 -R
 
 <h2 id="samdc21-micro-controllers-duet3d-toolboard-1lc">SAMDC21 micro-controllers (Duet3D Toolboard 1LC)<a class="headerlink" href="#samdc21-micro-controllers-duet3d-toolboard-1lc" title="Permanent link">&para;</a></h2>
 <p>The SAMC21 is flashed via the ARM Serial Wire Debug (SWD) interface. This is commonly done with a dedicated SWD hardware dongle. Alternatively, one can use a <a href="#running-openocd-on-the-raspberry-pi">Raspberry Pi with OpenOCD</a>.</p>
-<p>When using OpenOCD with the SAMC21, extra steps must be taken to first put the chip into Cold Plugging mode if the board makes use of the SWD pins for other purposes. If using OpenOCD on a Rasberry Pi, this can be done by running the following commands before invoking OpenOCD.</p>
+<p>When using OpenOCD with the SAMC21, extra steps must be taken to first put the chip into Cold Plugging mode if the board makes use of the SWD pins for other purposes. If using OpenOCD on a Raspberry Pi, this can be done by running the following commands before invoking OpenOCD.</p>
 <div class="highlight"><pre><span></span><code>SWCLK=25
 SWDIO=24
 SRST=18
@@ -1890,7 +2013,7 @@ make
 <p>The <a href="https://github.com/Arksine/CanBoot">CanBoot</a> bootloader provides an option for uploading Klipper firmware over the CANBUS. The bootloader itself is derived from Klipper's source code. Currently CanBoot supports the STM32F103, STM32F042, and STM32F072 models.</p>
 <p>It is recommended to use a ST-Link Programmer to flash CanBoot, however it should be possible to flash using <code>stm32flash</code> on STM32F103 devices, and <code>dfu-util</code> on STM32F042/STM32F072 devices. See the previous sections in this document for instructions on these flashing methods, substituting <code>canboot.bin</code> for the file name where appropriate. The CanBoot repository linked above provides instructions for building the bootloader.</p>
 <p>The first time CanBoot has been flashed it should detect that no application is present and enter the bootloader. If this doesn't occur it is possible to enter the bootloader by pressing the reset button twice in succession.</p>
-<p>The <code>flash_can.py</code> utility supplied in the <code>lib/canboot</code> folder may be used to upload Klipper firmware. The device UUID is necessary to flash. If you do not have a UUID it is possible to query nodes currently running the bootloader:</p>
+<p>The <code>flashtool.py</code> utility supplied in the <code>lib/katapult</code> folder may be used to upload Klipper firmware. The device UUID is necessary to flash. If you do not have a UUID it is possible to query nodes currently running the bootloader:</p>
 <div class="highlight"><pre><span></span><code>python3 flash_can.py -q
 </code></pre></div>
 
@@ -2027,13 +2150,13 @@ gdb out/klipper.elf
       
       
         
-        <a href="CANBUS.html" class="md-footer__link md-footer__link--next" aria-label="下一頁: CAN 匯流排" rel="next">
+        <a href="Bootloader_Entry.html" class="md-footer__link md-footer__link--next" aria-label="下一頁: Bootloader Entry" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一頁
               </span>
-              CAN 匯流排
+              Bootloader Entry
             </div>
           </div>
           <div class="md-footer__button md-icon">

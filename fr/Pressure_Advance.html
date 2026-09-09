@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint pour Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -612,6 +665,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Phase de fin de course
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Compensation de torsion de l'axe
       </a>
     </li>
   
@@ -1136,7 +1203,7 @@
   
     <li class="md-nav__item">
       <a href="SDCard_Updates.html" class="md-nav__link">
-        Mises à jour via la carte SD
+        Mises à jour de la SDCard
       </a>
     </li>
   
@@ -1191,8 +1258,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Entrée du bootloader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         BUS CAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        Dépannage du CANBUS
       </a>
     </li>
   
@@ -1221,6 +1316,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Détecteur de largeur de filament à effet hall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Sonde inductive à courants de Foucault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Cellules de charge
       </a>
     </li>
   
@@ -1310,7 +1433,7 @@
 <h2 id="reglage-du-pressure-advance">Réglage du pressure advance<a class="headerlink" href="#reglage-du-pressure-advance" title="Permanent link">&para;</a></h2>
 <p>Pressure advance permet deux choses importantes - réduire le suintement pendant les déplacements sans extrusion et réduire les bavures dans les coins. Ce guide utilise la réduction des bavures dans les angles comme base de réglage.</p>
 <p>Pour régler le pressure advance, l'imprimante doit être configurée et en état de marche le test nécessitant une impression et une inspection de l'objet imprimé. Il est conseillé de lire ce document en intégralité avant de lancer les tests.</p>
-<p>Utilisez un trancheur pour générer le g-code du grand carré creux disponible dans <a href="prints/square_tower.stl">docs/prints/square_tower.stl</a>. Utilisez un vitesse rapide (ex 100mm/s), pas de remplissage et une hauteur de couche grossière (la hauteur de couche devrait être dans les 75% du diamètre de la buse). Pensez à désactiver toutes les contrôle d'"accélération dynamique" dans le trancheur.</p>
+<p>Use a slicer to generate g-code for the large hollow square found in <a href="prints/square_tower.stl">docs/prints/square_tower.stl</a>. Use a high speed (eg, 100mm/s), zero infill, and a coarse layer height (the layer height should be around 75% of the nozzle diameter). Make sure any "dynamic acceleration control" and "scarf joint" seams are disabled in the slicer.</p>
 <p>Préparez le test en exécutant la commande G-Code suivante :</p>
 <div class="highlight"><pre><span></span><code>SET_VELOCITY_LIMIT SQUARE_CORNER_VELOCITY=1 ACCEL=500
 </code></pre></div>

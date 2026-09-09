@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Telepítés
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint a Klipper-hez
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -612,6 +665,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Végállás fázis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Tengely fordulat kompenzáció
       </a>
     </li>
   
@@ -887,13 +954,6 @@
         <li class="md-nav__item">
   <a href="#hogyan-mukodik" class="md-nav__link">
     Hogyan működik?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jelenlegi-korlatozasok" class="md-nav__link">
-    Jelenlegi korlátozások
   </a>
   
 </li>
@@ -1205,8 +1265,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader belépés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Hibaelhárítás
       </a>
     </li>
   
@@ -1235,6 +1323,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall nyomtatószál szélesség érzékelő
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Örvényáramú induktív szonda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1296,13 +1412,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jelenlegi-korlatozasok" class="md-nav__link">
-    Jelenlegi korlátozások
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parancsok" class="md-nav__link">
     Parancsok
   </a>
@@ -1334,13 +1443,11 @@
 
 
 <h1 id="pwm-eszkozok-hasznalata">PWM eszközök használata<a class="headerlink" href="#pwm-eszkozok-hasznalata" title="Permanent link">&para;</a></h1>
-<p>Ez a dokumentum leírja, hogyan állíthatsz be egy PWM-vezérelt lézert vagy orsót az <code>output_pin</code> és néhány makró segítségével.</p>
+<p>This document describes how to setup a PWM-controlled laser or spindle using <code>pwm_tool</code> and some macros.</p>
 <h2 id="hogyan-mukodik">Hogyan működik?<a class="headerlink" href="#hogyan-mukodik" title="Permanent link">&para;</a></h2>
 <p>A nyomtatófej ventilátor PWM kimenetének felhasználásával lézereket vagy orsókat vezérelhetsz. Ez akkor hasznos, ha kapcsolható nyomtatófejeket használsz, például az E3D szerszámváltó vagy egy barkácsmegoldás. Általában az olyan cam-tool, mint a LaserWeb, úgy konfigurálhatók, hogy <code>M3-M5</code> parancsokat használjanak, amelyek <em>spindle speed CW</em> (<code>M3 S[0-255]</code>), <em>spindle speed CCW</em> (<code>M4 S[0-255]</code>) és <em>spindle stop</em> (<code>M5</code>).</p>
 <p><strong>Figyelmeztetés:</strong> A lézer használatakor tarts be minden biztonsági óvintézkedést, amit csak lehet! A diódalézerek általában invertáltak. Ez azt jelenti, hogy amikor az MCU újraindul, a lézer <em>teljesen be lesz kapcsolva</em> arra az időre. A biztonság kedvéért ajánlott <em>mindig</em> megfelelő hullámhosszúságú lézerszemüveget viselni, ha a lézer be van kapcsolva, és a lézert le kell kapcsolni, ha nincs rá szükség. Emellett be kell állítani egy biztonsági időkorlátot, hogy ha a gazdagép vagy az MCU hibát észlel, a szerszám leálljon.</p>
 <p>Egy példakonfigurációért lásd <a href="/config/sample-pwm-tool.cfg">config/sample-pwm-tool.cfg</a>.</p>
-<h2 id="jelenlegi-korlatozasok">Jelenlegi korlátozások<a class="headerlink" href="#jelenlegi-korlatozasok" title="Permanent link">&para;</a></h2>
-<p>Korlátozott, hogy milyen gyakoriak lehetnek a PWM-frissítések. Bár nagyon pontos, a PWM frissítés csak 0,1 másodpercenként fordulhat elő, így szinte használhatatlanná válik a rasztergravírozáshoz. Létezik azonban egy <a href="https://github.com/Cirromulus/klipper/tree/laser_tool">kísérleti ág</a>, amelynek saját kompromisszumai vannak. Hosszú távon azt tervezik, hogy ezt a funkciót hozzáadják a fővonali klipperhez.</p>
 <h2 id="parancsok">Parancsok<a class="headerlink" href="#parancsok" title="Permanent link">&para;</a></h2>
 <p><code>M3/M4 S&lt;value&gt;</code> : PWM-üzemmód beállítása. Értékek 0 és 255 között. <code>M5</code> : PWM kimenet leállítása a kikapcsolási értékre.</p>
 <h2 id="laserweb-konfiguracio">Laserweb konfiguráció<a class="headerlink" href="#laserweb-konfiguracio" title="Permanent link">&para;</a></h2>

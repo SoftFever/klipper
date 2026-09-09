@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.1.3">
     
     
       
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -166,6 +166,12 @@
                 <li class="md-select__item">
                   <a href="/hu/" hreflang="hu" class="md-select__link">
                     Magyar
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/de/" hreflang="de" class="md-select__link">
+                    Deutsch
                   </a>
                 </li>
                 
@@ -410,10 +416,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="Installation.html" class="md-nav__link">
         Telepítés
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OctoPrint.html" class="md-nav__link">
+        OctoPrint a Klipper-hez
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -612,6 +665,20 @@
     <li class="md-nav__item">
       <a href="Endstop_Phase.html" class="md-nav__link">
         Végállás fázis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Axis_Twist_Compensation.html" class="md-nav__link">
+        Tengely fordulat kompenzáció
       </a>
     </li>
   
@@ -1390,8 +1457,36 @@
   
   
     <li class="md-nav__item">
+      <a href="Bootloader_Entry.html" class="md-nav__link">
+        Bootloader belépés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CANBUS.html" class="md-nav__link">
         CANBUS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CANBUS_Troubleshooting.html" class="md-nav__link">
+        CANBUS Hibaelhárítás
       </a>
     </li>
   
@@ -1420,6 +1515,34 @@
     <li class="md-nav__item">
       <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall nyomtatószál szélesség érzékelő
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Örvényáramú induktív szonda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
       </a>
     </li>
   
@@ -1720,6 +1843,7 @@
 <p>Általában a SpreadCycle üzemmód nagyobb nyomatékot és nagyobb helymeghatározási pontosságot biztosít, mint a StealthChop üzemmód. A StealthChop üzemmód azonban néhány nyomtatónál lényegesen kisebb hallható zajjal járhat.</p>
 <p>Az üzemmódok összehasonlító tesztjei azt mutatták, hogy a StealthChop üzemmód használata esetén a "pozíciós késés" az állandó sebességű mozgások során a teljes lépés 75%-al nőtt (például egy 40 mm-es forgatási távolsággal és 200 lépés/fordulatszámmal rendelkező nyomtatónál az állandó sebességű mozgások pozícióeltérése ~0,150 mm-rel nőtt). Ez a "késedelem a kért pozíció elérésében" azonban nem biztos, hogy jelentős nyomtatási hibaként jelentkezik, és lehet, hogy jobban tetszik a StealthChop mód csendesebb működése.</p>
 <p>Javasoljuk, hogy mindig a "SpreadCycle" módot használd (nem megadva a <code>stealthchop_threshold</code> értéket) vagy mindig a "StealthChop" módot (a <code>stealthchop_threshold</code> 999999-re állítva). Sajnos a meghajtók gyakran rossz és zavaros eredményeket produkálnak, ha a mód változik, miközben a motor nem álló állapotban van.</p>
+<p>Note that the <code>stealthchop_threshold</code> config option does not impact sensorless homing as Klipper automatically switches the TMC driver to an appropriate mode during sensorless homing operations.</p>
 <h2 id="a-tmc-interpolacios-beallitasa-kis-pozicioelterest-eredmenyez">A TMC interpolációs beállítása kis pozícióeltérést eredményez<a class="headerlink" href="#a-tmc-interpolacios-beallitasa-kis-pozicioelterest-eredmenyez" title="Permanent link">&para;</a></h2>
 <p>A TMC motorvezérlő <code>interpolate</code> beállítása csökkentheti a nyomtató mozgásának hallható zaját, de ennek ára egy kis rendszerszintű helyzeti hiba. Ez a rendszerszintű helyzeti hiba abból adódik, hogy a motorvezérlő késve hajtja végre a Klipper által küldött "lépéseket". Állandó sebességű mozgások során ez a késleltetés közel fél konfigurált mikrolépésnyi pozícióhibát eredményez (pontosabban a hiba fél mikrolépésnyi távolság mínusz a teljes lépés távolság 512-ed része). Például egy 40 mm-es rotation_distance, 200 steps_per_rotation és 16 microstep tengelyen az állandó sebességű mozgások során bevezetett rendszerszintű hiba ~0,006 mm.</p>
 <p>A legjobb helymeghatározási pontosság érdekében fontold meg a SpreadCycle mód használatát és az interpoláció kikapcsolását (állítsd be az <code>interpolate: False</code> értéket a TMC motorvezérlő konfigurációjában). Ilyen konfiguráció esetén növelhetjük a <code>microstep</code> beállítást a léptető mozgása közbeni hallható zajok csökkentése érdekében. Általában a <code>64</code> vagy <code>128</code> mikrolépés beállítása az interpolációhoz hasonló hallható zajjal jár, és mindezt anélkül, hogy rendszerszintű helyzeti hibát jelezne.</p>
